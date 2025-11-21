@@ -1,0 +1,10 @@
+# Understanding Workflows for Events
+Source: https://help.zscaler.com/workflow-automation/understanding-workflows-events
+PDF: https://help.zscaler.com/pdf/com/en/1500296.pdf
+
+Workflow Automation enables admins to view and manage Business Insights events that have occurred in their organization. Admins can configure workflows that automatically notify the user about the event and create a ticket for one or more events. The actions performed by the workflows are logged in the State Changes table of the [Event Details](/workflow-automation/managing-event-details) page.
+Workflow Configuration
+When configuring a workflow in Workflow Automation, you must select a workflow template as the basis of workflow and also configure the details for the workflow's steps within that particular workflow template. Depending on the workflow template, there might be different details required for each step, such as notification channel and time to wait for the user's response before creating a ticket.
+Workflow Automation provides the **Notify Users and Create a Ticket **workflow template for events. The template is used to notify the end users about the event, through the configured channel such as email, and create a ticket in the ServiceNow ticketing integration application.
+To learn more, see [Managing Workflow Templates for Events](/workflow-automation/managing-workflow-templates-events) and [Managing Workflows for Events](/workflow-automation/managing-workflows-events).
+After the workflow is configured, you can specify the events that use this workflow by mapping the workflow to one or more of the attributes available in an event transaction. When an event occurs in your organization that includes those attributes, the workflow automatically triggers and performs those actions specified in the workflow. To learn more, see [Managing Workflow Mappings for Events](/workflow-automation/managing-workflow-mappings-events).

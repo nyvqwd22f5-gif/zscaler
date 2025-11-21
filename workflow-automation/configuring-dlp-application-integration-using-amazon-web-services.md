@@ -1,0 +1,9 @@
+# Configuring the DLP Application Integration Using Amazon Web Services
+Source: https://help.zscaler.com/workflow-automation/configuring-dlp-application-integration-using-amazon-web-services
+PDF: https://help.zscaler.com/pdf/com/en/1417831.pdf
+
+You must configure Workflow Automation integration with the Amazon Web Services (AWS) EC2 instance using Zscaler incident-forwarding methods to allow the Zscaler service to send information about policy violations to public cloud storage (i.e., to your organization's AWS Simple Storage Service (S3) buckets). You can configure DLP application integration using one of the following methods:
+- [Zscaler Incident Receiver](/workflow-automation/configuring-amazon-web-services-dlp-application-integration-using-zscaler-incident-receiver-0)
+- [Cloud-to-Cloud Incident Forwarding](/workflow-automation/configuring-amazon-web-services-dlp-application-integration-using-cloud-cloud-incident-forwarding)
+You can also configure the DLP application integration using Microsoft Azure and Google Cloud Platform. To learn more, see [Configuring the DLP Application Integration Using Azure](/workflow-automation/configuring-dlp-application-integration-using-azure) and [Configuring the DLP Application Integration Using Google Cloud Platform](/workflow-automation/configuring-dlp-application-integration-using-google-cloud-platform).
+After you configure the DLP application integration, the DLP incidents that occur in your organization are displayed in the Workflow Automation Admin Portal on the Incidents page. To learn more, see [Managing Incidents](/workflow-automation/managing-incidents).

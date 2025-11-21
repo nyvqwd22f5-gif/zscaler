@@ -1,0 +1,10 @@
+# Configuring the DLP Application Integration Using Azure
+Source: https://help.zscaler.com/workflow-automation/configuring-dlp-application-integration-using-azure
+PDF: https://help.zscaler.com/pdf/com/en/1452226.pdf
+
+You must configure Workflow Automation integration with the Azure instance using Zscaler incident forwarding methods to allow the Zscaler service to send information about policy violations to public cloud storage (i.e., to your organization's Azure storage containers). You can configure DLP application integration with Azure using one of the following methods:
+- [Zscaler Incident Receiver](/workflow-automation/configuring-azure-dlp-application-integration-using-zscaler-incident-receiver)
+- [Cloud-to-Cloud Incident Forwarding](/workflow-automation/configuring-azure-dlp-application-integration-using-cloud-cloud-incident-forwarding)
+You can also configure the DLP application integration using Amazon Web Services and Google Cloud Platform. To learn more, see [Configuring the DLP Application Integration Using Amazon Web Services](/workflow-automation/configuring-dlp-application-integration-using-amazon-web-services) and [Configuring the DLP Application Integration Using Google Cloud Platform](/workflow-automation/configuring-dlp-application-integration-using-google-cloud-platform).
+To view the various IP addresses of different Workflow Automation clouds associated with Zscaler, see [NAT Gateway IP addresses](/downloads/workflow-automation/setup/configuring-dlp-application-integration-using-azure/Workflow%20Automation%20-%20NAT%20Gateway%20IPs.txt). Ensure that these NAT Gateway IPs are allowed on the storage account. You can find your cloud in the URL that admins use to log in to the Workflow Automation Admin Portal. For example, if you log in to https://app.us1.zsworkflow.net/, then that organization's cloud is produs1.
+After you configure the DLP application integration, the DLP incidents that occur in your organization are displayed on the Incidents page in the Workflow Automation Admin Portal. To learn more, see [Managing Incidents](/workflow-automation/managing-incidents).

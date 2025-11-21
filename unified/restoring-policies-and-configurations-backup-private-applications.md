@@ -1,0 +1,103 @@
+# Restoring Policies and Configurations from a Backup for Private Applications
+Source: https://help.zscaler.com/unified/restoring-policies-and-configurations-backup-private-applications
+PDF: https://help.zscaler.com/pdf/com/en/1520736.pdf
+
+When you restore policies and configuration settings from a backup, it overwrites all your current policies and configuration settings, including all the rules and their components. If your current configuration has a component that is not in the backup, then that component is removed when the backup is restored. Therefore, you should review the policies in the backup before restoring it.
+If the backup was created before some of the additional features were introduced, then that legacy backup can only be used to restore the policies and configurations that belonged to it. Applying a legacy backup does not override policies and configurations that were not supported in the platform version at the time of the backup creation.
+To restore policies and configurations from a backup:
+- Go to **Administration** > **Backup & Restore **> **Private Applications**.
+- Locate the **Backup Name** within the table and click the **Restore **icon (![zpa-restore-icon.png](/downloads/zpa/administration/backup-restore/restoring-policies-and-configurations-restore-point/zpa-restore-icon.png)
+).
+The **View Report and Restore **drawer appears.
+[See image.](#restoreWindow)
+- In the **View Report and Restore **drawer, you can view the following reports:
+- **Inconsistency Report**: Shows inconsistencies in application management and policy management if the backup is applied. You can click **Collapse All** to collapse all inconsistencies, or you can click on an individual inconsistency to see more information. Within the inconsistency report, you can do the following:
+- Filter the information that appears in the table. By default, no filters are applied.
+- Click the **Restore **icon to restore the policies and configurations from the backup. To learn more, see [Inconsistencies in the Backup](#InconsistenciesInTheRestorePoint).
+- Click the **Download **icon (![zpa-download-icon.png](/downloads/zpa/administration/backup-restore/restoring-policies-and-configurations-restore-point/zpa-download-icon.png)
+) to download the inconsistency report as a CSV file.
+- **Full Report**: Shows inconsistencies and modifications from the current backup in application management and policy management if the backup is applied.
+- Click **Restore **to restore the policies and configurations from the backup.
+This action verifies certain conditions (e.g., ensuring that all provisioned static IP addresses in the backup are still associated with the current tenant, ensuring that the expiration timestamp for all certificates persisted in the backup, etc.) before applying the backup. After you click **Restore**, a banner appears at the top of the Backup and Restore page to indicate that the page is read-only for the duration of the backup creation, or for the duration that the restore is being applied.
+[See Image.](#banner)
+Pre-Restore Backup of a Configuration
+Before restoring a backup, a pre-restore backup of the existing configuration is automatically created. The pre-restore backup of the configuration can be used in case the backup that was restored has post-restore issues. The pre-restore backup of a configuration has the `Pre-Restore Configuration` naming convention. A pre-restore backup of a configuration appears within the table on the [Backup and Restore](/unified/about-backup-and-restore-private-applications) page for Private Applications. The timestamp is listed after the `Pre-Restore Configuration` text, and is in the `MM-DD-YYYY hh-mm-ss` format, where `MM` is month, `DD` is day, `YYYY` is year, `HH` is hours, `MM` is minutes, and `SS` is seconds. For example, after restoring a backup that was created on December 25, 2024, at 12:15 PM, the backup appears as `Pre-Restore Configuration 12-25-2024 12:15:00`.
+[]![Viewing Reports within the Backup and Restore drawer](/downloads/zpa/administration/backup-restore/restoring-policies-and-configurations-backup/zpa-inconsistency-reports-drawer.png)
+[]Inconsistencies in the Backup
+The following table shows potential inconsistencies that can occur when a backup is applied, the reasons for the inconsistencies, and the resolvable action, if any.
+[](/unified/ranges-limitations#private-applications)[](/unified/configuring-defined-application-segments#define-clientconnector)[](/unified/configuring-defined-application-segments#define-clientconnector)[](/unified/adding-dns-search-domains)
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+| Configuration | Feature / Backup Entity | Inconsistency Reason | Resolution |
+| ------------- | ----------------------- | -------------------- | ---------- |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the number of applications exceeds the maximum limit. To learn more, see Ranges & Limitations. | N/A |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the application that has a server group which was deleted is restored. The server group in this case was added in the Default Microtenant after the backup was created, and then was used in a different application within a Microtenant. | N/A |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the domain of two or more application segments have conflicting **Bypass **settings (i.e., **Use Client Forwarding Policy**, **Always**, or **On** **Corporate Network**). When two or more application segments contain the same domain, they must use the same **Bypass** settings. To learn more, see Configuring Defined Application Segments. | Ensure the **Bypass** settings are set to either **Use Client Forwarding Policy** or **On Corporate Network** for two or more application segments with the same domain. Additionally, ensure the existing application is present in other Microtenants. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the domain of two or more application segments have conflicting settings for **Double Encryption**. When two or more application segments contain the same domain, they must have **Double Encryption** set to the same value. To learn more, see Configuring Defined Application Segments. | Ensure that **Double Encryption** is set to the same value (i.e., **Enabled** or **Disabled**) for two or more application segments that contain the same domain. Additionally, ensure the existing application is present in other Microtenants. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the TCP port range of an application overlaps with the port range of an existing application in a different Microtenant. | Update the TCP port range of an existing application segment in a different Microtenant to ensure that there is no overlapping port range for the same application. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the UDP port range of an application overlaps with the port range of an existing application in a different Microtenant. | Update the UDP port range of an existing application segment in a different Microtenant to ensure that there is no overlapping port range for the same application. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the domain of the application already exists as a FQDN in the user portal and exists as an application in the application segment, or the application already exists as a FQDN in the privileged portal and exists as an application in the application segment. | Update the user portal or the privileged portal to use a different FQDN. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and the application segment references policies within a Microtenant. | Remove the application segment from the policies. |
+| Application Management | Application Segment | An inconsistency occurs for an application segment when the restore is applied and a duplicate DNS search domain exists for an application within a Microtenant. To learn more, see Adding DNS Search Domains. | Remove the duplicate domain from the Microtenant. |
+| Application Management | Browser Access Application Segment | An inconsistency occurs for a Browser Access application segment when a backup is applied in the following scenarios:The Browser Access FQDN is used in other tenants prior to applying the restore.The wildcard domain exists for the given domain of the Browser Access application segment, or vice versa in a different Microtenant.The web server certificate associated with the application segment is deleted. | To resolve the inconsistencies:Remove the Browser Access application from the other tenants.Remove the wildcard domain of the Browser Access application from the other Microtenant.N/A |
+| Application Management | Segment Group | An inconsistency occurs for a segment group when a backup is applied in the following scenario. The segment group is deleted but is linked with policies other than access policies, timeout policies, and client forwarding policies within the same Microtenant, or the segment group in the Default Microtenant is linked with any policies within another Microtenant. | Remove the segment group from the associated policies in the same Microtenant, or associate the segment group with the policies within a Microtenant. |
+| Application Management | Server | An inconsistency occurs for a server if the server is linked to a server group that is referenced by Internet & SaaS. | Remove the server from the server group that is referenced by Internet & SaaS. |
+| Application Management | Server Group | An inconsistency occurs for a server group when a backup is applied in the following scenarios:The server group doesn't have an App Connector group.The server group is used in an application segment that is within a Microtenant. | To resolve the inconsistencies:N/ARemove the server group referenced by the application segment that is within the Microtenant. |
+| Certificate Management | Certificates | An inconsistency occurs for a certificate in the following scenarios when a backup is applied:A Certficate Signing Request (CSR) exists with the same subject.The certificate of the Browser Access application is referenced within a Microtenant.The user portal within a Microtenant references the certificate. | To resolve the inconsistencies:Delete the certificate within the Microtenant.Update the Browser Access application within the Microtenant so that it uses a different certificate.Update the user portal within the Microtenant so that it uses a different certificate. |
+| Policy Management | Access Policy | An inconsistency occurs for an access policy in the following scenarios when a backup is applied:The application or segment group are no longer present.The IdP is no longer present.The Trusted Network is not present in the Admin Portal.The Posture is not present in the Admin Portal.The Location is no longer present.The Branch Connector group is no longer present.The Cloud Connector group is no longer present.The SAML attribute name is no longer present.The SCIM attribute name is no longer present.The SCIM attribute value is no longer present due to the value being removed in the latest SCIM sync.The risk score is no longer present.The Machine group is no longer present.The App Connector group or server group is deleted and no longer exists. Traffic fails if an App Connector group or server group is used in the policy and there are no App Connectors. | N/A |
+| Policy Management | Client Forwarding Policy | An inconsistency occurs for a client forwarding policy in the following scenarios when a backup is applied:The Trusted Network is not present in the Admin Portal.The Posture is not present in the Admin Portal.The Branch Connector group is not present.The Cloud Connector group is not present.The SAML attribute name is no longer present.The SCIM attribute name is no longer present.The SCIM attribute value is no longer present due to the value being removed in the latest SCIM sync. | N/A |
+| Policy Management | Timeout Policy | An inconsistency occurs for a timeout policy in the following scenarios when a backup is applied:The Trusted Network is not present in the Admin Portal.The Posture is not present in the Admin Portal.The Cloud Connector group is not present.The SAML attribute name is no longer present.The SCIM attribute name is no longer present.The SCIM attribute value is no longer present due to the value being removed in the latest SCIM sync. | N/A |
+| Policy Management | Access Policy, Client Forwarding Policy, Timeout Policy | An inconsistency occurs for a policy when a backup is applied and the policy is using an application segment that is no longer shared to the policy. When the policy is deleted, the application segment becomes unshared from the Microtenant and the policy has an application segment that is no longer shared with it. | N/A |
+| Policy Management | Access Policy, Client Forwarding Policy, Timeout Policy | An inconsistency occurs for an access policy, client forwarding policy, or timeout policy when the application is moved to another Microtenant. | Move the application back to the current Microtenant. |
+| User Portal | User Portals | An inconsistency occurs for user portals in the following scenarios when a backup is applied:The web server certificate associated to the user portal is deleted.The portal URL has a domain that is conflicting with an application segment that is is used by a Microtenant. | To resolve the inconsistencies:N/AUpdate the user portal so that it uses another domain. |
+Restore Failures
+The following table lists the reasons for why a restore can fail.
+| Configuration | Failure Reason |
+| ------------- | -------------- |
+| Backup and Restore | The restore failed due to the failed pre-restore backup. |
+| N/A | The restore failed due to an unexpected exception. |
+[]![Banner in the Backup and Restore page ](/downloads/zpa/administration/backup-restore/restoring-policies-and-configurations-backup/zpa-backup-restore-banner.png)

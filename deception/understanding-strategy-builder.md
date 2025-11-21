@@ -1,0 +1,10 @@
+# Understanding Strategy Builder
+Source: https://help.zscaler.com/deception/understanding-strategy-builder
+PDF: https://help.zscaler.com/pdf/com/en/1531562.pdf
+
+Strategy Builder allows you to deploy different types of decoys in your environment with a single click using strategies. The Strategy Builder includes the following components:
+- **Deception Strategy**: A mechanism that combines different decoy personalities to configure and deploy different types of decoys with a single click. The strategies are built using decoy personalities that serve as templates for different types of decoys, and are deployed using [deploy strategies](/deception/about-deploy-strategy). To learn more, see [About Deception Strategy](/deception/about-deception-strategy).
+- **Network Decoy Personalities**: Templates that can be used to create [network decoys](/deception/about-network-decoys). You can use these personalities when configuring [network decoys manually](/deception/about-network-decoys), or use them in a [deception strategy](/deception/about-deploy-strategy) to create decoys. To learn more, see [About Network Decoy Personalities](/deception/about-network-decoy-personalities).
+- **Threat Intelligence Decoy Personalities**: Templates that can be used to create [Threat Intelligence (TI) decoys](/deception/about-threat-intelligence-decoys) via [deception strategies](/deception/about-deception-strategy). To learn more, see [About Threat Intelligence (TI)](/deception/about-threat-intelligence-decoy-personalities).
+- **Landmine Decoy Personalities**: Templates that can be used to create [landmine policies](/deception/about-landmine-decoys) via [deception strategies](/deception/about-deploy-strategy). To learn more, see [About Landmine Decoy Personalities](/deception/about-landmine-decoy-personalities).
+- **Active Directory Decoy Personalities**: Templates that can be used to create [AD decoys](/deception/about-active-directory-decoys) via [deception strategies](/deception/about-deception-strategy). To learn more, see [About Active Directory Decoy Personalities](/deception/about-active-directory-decoy-personalities).

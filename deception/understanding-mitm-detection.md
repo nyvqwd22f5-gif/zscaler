@@ -1,0 +1,6 @@
+# Understanding MITM Detection
+Source: https://help.zscaler.com/deception/understanding-mitm-detection
+PDF: https://help.zscaler.com/pdf/com/en/1531563.pdf
+
+Zscaler Deception can detect and alert certain types of Man-in-the-Middle (MITM) attacks, such as Link-Local Multicast Name Resolution (LLMNR) poisoning, NetBIOS Name Service (NBT-NS) poisoning, and multicast DNS (mDNS) poisoning. With these types of MITM attacks, the adversaries listen to name resolution requests from devices and send a malicious response. To detect these MITM attacks, Deception enables you to configure your [internal network decoys](/deception/creating-internal-network-decoy) to broadcast decoy name resolution requests across the subnet at specified intervals. If an adversary responds to the request using tools like Responder or Inveigh, then the activity is logged as an MITM attack. You can view and analyze the attack details from the [Deception Dashboard](/deception/viewing-and-managing-zscaler-deception-dashboard).
+To learn how to configure MITM detection, see [Configuring MITM Attack Detection](/deception/configuring-mitm-attack-detection).

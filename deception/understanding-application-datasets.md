@@ -1,0 +1,9 @@
+# Understanding Application Datasets
+Source: https://help.zscaler.com/deception/understanding-application-datasets
+PDF: https://help.zscaler.com/pdf/com/en/1531561.pdf
+
+Application datasets are resources used to build and deploy decoy web applications. You can create static, dynamic, or high-interaction web application decoys by deploying the datasets using [Threat Intelligence (TI) decoys](/deception/about-threat-intelligence-decoys) or [web services on network decoys](/deception/configuring-services-network-decoy#configuring-web-service). The following list of application datasets in Miragemaker allows you to create different types of application decoys:
+- **Static Application Datasets**: Allows you to configure the front ends of web application decoys. These datasets consist of static HTML files, CSS files, JavaScript files, etc. To learn more, see [About Static Application Datasets](/deception/about-static-application-datasets).
+- **Vulnerable Application Datasets**: Allows you to configure requests and responses to mimic dynamic web applications. Typically, the requests and responses are created based on CVE disclosures for specific applications. You can also create custom requests and responses for dynamic web applications that mimic any vulnerability. To learn more, see [About Vulnerable Application Datasets (CVE Datasets)](/deception/about-vulnerable-application-datasets-cve-datasets).
+- **Dynamic Application Datasets**: Combines appropriate front ends (static application datasets) and dynamic interactions (vulnerable application datasets) to create interactive decoy web applications. To learn more, see [About Dynamic Application Datasets](/deception/about-dynamic-application-datasets).
+- **High-Interaction Container Datasets**: Self-contained docker container datasets that are fully interactive application decoys. To learn more, see [About High-Interaction Containers](/deception/about-high-interaction-containers).

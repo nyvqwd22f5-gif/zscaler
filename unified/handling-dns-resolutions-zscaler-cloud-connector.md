@@ -1,0 +1,12 @@
+# Handling DNS Resolutions for Zscaler Cloud Connector
+Source: https://help.zscaler.com/unified/handling-dns-resolutions-zscaler-cloud-connector
+PDF: https://help.zscaler.com/pdf/com/en/1517926.pdf
+
+The following table provides information on how Zscaler Cloud Connector handles DNS resolutions for various traffic forwarding methods:
+[](/unified/about-ip-pool-0)[](/unified/about-global-internet-saas-public-service-edges)
+| Traffic Forwarding Method | DNS Resolution Handling |
+| ------------------------- | ----------------------- |
+| ZPA Traffic Forwarding | The DNS request arrives at any destination IP address for an FQDN request that matches a Private Applications application. Cloud Connector intercepts requests and responds with a customer-defined synthetic IP address from the customer-defined IP pool. |
+| ZIA Traffic Forwarding | The DNS request arrives at Cloud Connector from a workload configured with a custom DNS server destination IP address (e.g., 8.8.8.8). Cloud Connector encapsulates the request with a client source IP and destination DNS IP address (e.g., 8.8.8.8) and forwards the request to Internet & SaaS. You need to configure the Internet & SaaS DNS control and firewall filtering policies to allow the DNS response back to the workload. |
+| Direct Traffic Forwarding | The DNS request arrives at Cloud Connector from a workload configured with a custom DNS server destination IP address (e.g., 8.8.8.8). Custom traffic forwarding policy matches the client source IP address, the destination IP address (e.g., 8.8.8.8), or network service (UDP 53) with the forwarding action set to direct. Cloud Connector forwards this request to the destination IP address, modifying the source IP from the client to its own service IP address (Source NAT). |
+| Direct Traffic Forwarding with Global VIP | The DNS request arrives at Cloud Connector from a workload configured with a custom DNS server destination that matches a Zscaler Global Public Service Edge IP (e.g., 185.46.212.88). Custom traffic forwarding policy matches the client source IP address, the destination IP address, or network service (UDP 53) with the forwarding action set to direct. Cloud Connector performs both source and destination NAT on the DNS request. The source IP is replaced with Cloud Connector's own service IP address and the destination IP is replaced with the current DNS server configured on the Cloud Connector. |

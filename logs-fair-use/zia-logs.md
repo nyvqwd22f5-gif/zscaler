@@ -1,0 +1,13 @@
+# ZIA Logs
+Source: https://help.zscaler.com/logs-fair-use/zia-logs
+PDF: https://help.zscaler.com/pdf/com/en/1391021.pdf
+
+By accessing the Zscaler Internet Access (ZIA) service, you provide Zscaler the right to process, use, reproduce, store, modify, and display the information from logs.
+*Logs* capture network traffic metadata for your SaaS applications. Logs are retained by Zscaler for a rolling period of six months during the term of subscription. When the subscription term ends or expires, the logs* *are deleted by Zscaler after the six month retention cycle.
+During the deployment process, you can choose to have the logs stored in either the United States or the European Union and Switzerland.
+If you order the Data Loss Prevention (DLP) service (for any channel such as Inline, Endpoint, Email, API CASB, or Private Applications), logs also capture metadata for certain end user activities, such as copying to removable storage, copying to network shares, printing, sharing a file, and uploading a document.
+If you order Zscaler Nanolog Streaming Service (NSS), you can stream the logs in real-time within your premises. Using NSS, these logs can also be sent to multiple systems, allowing the retention of the logs for any period.
+If you order Zscaler Gen AI Security, logs will also include classifications of end user prompts to generative AI applications. By default, end user prompts to supported generative AI applications are not captured in logs. They are captured in the logs only if your administrator enables this feature via the toggle in the Admin Portal.
+If you order the IoT Advanced Security service, unauthenticated, non-user-identifying web logs that are associated with the customer at the org level will be retained by Zscaler for a rolling period of three months during the term of subscription. When the subscription term ends or expires, these logs are deleted by Zscaler after the three month retention cycle. For the IoT Advanced Security service, the logs will be stored in the United States.
+If you order the Endpoint Context service, logs also capture telemetry about user devices. This telemetry may include software process level information of the device.
+If you order the Zero Trust Browser (formerly Cloud Browser Isolation) or Advanced Cloud Sandbox service, logs also capture passwords that are entered by the user for password-protected files. This is required to allow viewing the file from within the Zero Trust Browser or for analysis of the file by the Advanced Cloud Sandbox.

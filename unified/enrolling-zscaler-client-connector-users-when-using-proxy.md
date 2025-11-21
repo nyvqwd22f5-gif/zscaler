@@ -1,0 +1,14 @@
+# Enrolling Zscaler Client Connector Users When Using a Proxy
+Source: https://help.zscaler.com/unified/enrolling-zscaler-client-connector-users-when-using-proxy
+PDF: https://help.zscaler.com/pdf/com/en/1495691.pdf
+
+Prior to Zscaler Client Connector 1.2.4, Zscaler Client Connector would ignore configured proxy settings for enrollment. In some environments, computers connected to the corporate network have no direct or default route to connect to the Internet or external networks. The devices are typically configured with a company proxy server via group policy or a management solution.
+In these scenarios, users, who browsed the web before enrollment, would connect to the Internet using the configured proxy. However, because Zscaler Client Connector ignored the system proxy settings, enrollment to the Zscaler cloud would not connect.
+As of Zscaler Client Connector 1.2.4, the app contacts the Zscaler cloud for enrollment. First, it performs a DNS request to resolve the cloud address, then attempts to establish a connection. If either of these tests fail, this means the device cannot connect to the Zscaler cloud directly. In this case, Zscaler Client Connector looks for a configured system proxy and attempts connection through that. If this connection fails, the user is shown an error explaining that connection failed.
+Zscaler Client Connector only supports proxy awareness for enrollment. User traffic is not supported after enrollment via a proxy.
+Configuring Zscaler Client Connector to Follow System Proxy
+To configure Zscaler Client Connector to follow a proxy, ensure that the proxy is configured as the system default proxy. Zscaler Client Connector has no mechanism to manually define the proxy and it will follow the configured system proxy. Configure this either by using GPO or manually on the device (for example, via Internet Explorer settings).
+- Zscaler Client Connector attempts to detect an external proxy by testing the `http://1.2.3.4/` URL in a system and expects the system to return a proxy from this URL to be aware of that proxy.
+- Ensure that the proxy server you use on your network does not perform SSL inspection or authentication on Zscaler Client Connector traffic so that the connectivity does not fail.
+- Zscaler cannot perform SSL inspection on the user's traffic, because that traffic is using your corporate proxy. You must add any internal company domains to the SSL bypass list. If you do not, the Zscaler service will attempt to inspect this traffic, which would break connectivity.
+Currently, proxy awareness is supported in Zscaler Client Connector 1.2.4 for Windows and macOS deployments. Mobile devices do not support this functionality. This functionality is available to you by default and does not require any configuration from the Admin Portal to use.

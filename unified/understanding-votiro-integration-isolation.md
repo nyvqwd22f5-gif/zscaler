@@ -1,0 +1,7 @@
+# Understanding Votiro Integration for Isolation
+Source: https://help.zscaler.com/unified/understanding-votiro-integration-isolation
+PDF: https://help.zscaler.com/pdf/com/en/1503406.pdf
+
+When your organization is using Zscaler Isolation, any file downloaded or uploaded to the isolation container is inline scanned to ensure that the file does not contain malware. The integration of [Votiro](https://votiro.com/) and Internet & SaaS adds additional coverage for files accessed while in isolation by providing further inline scanning for malicious content. To learn more, see [About Partner Integrations](/unified/about-partner-integrations).
+Votiro allows supported files downloaded or uploaded to or from internet destinations to be sanitized by their Content Disarm and Reconstruction (CDR) services. These CDR services consume the original file being transacted, and it returns to the user a file in the same format as the original file, but sanitized. This ensures that either the active content is stripped out or replaced with a sanitized model, ensuring the file itself cannot be used for malicious purposes.
+If you are an Isolation admin with access to the [Votiro Secure File Gateway for Web Downloads and Uploads](https://votiro.com/guides/what-is-content-disarm-and-reconstruction-cdr/), you can use Votiro as part of your Internet & SaaS isolation profile configuration. To learn more, see [Creating Isolation Profiles for Internet & SaaS](/unified/creating-isolation-profiles-internet-saas).

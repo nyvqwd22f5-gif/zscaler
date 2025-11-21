@@ -1,0 +1,7 @@
+# Zscaler and Cymulate Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-cymulate-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1531968.pdf
+
+The Zscaler and Cymulate Deployment Guide provides instructions on using Zscaler Internet Access (ZIA) features with the Cymulate Platform.
+The integration between ZIA and the Cymulate Platform allows IT administrators to validate detection-correlating events from the Zscaler API with Cymulate assessment findings. During assessments, the Cymulate agent actively simulates threat scenarios by leveraging Indicators of Compromise (IOCs) of URLs and file paths. It does so by attempting to access URLs categorized as malicious and by downloading files identified as threats. After the assessment, Cymulate queries the Zscaler API to determine whether the Web Gateway has logged any events, ensuring a comprehensive evaluation of your detection capabilities.
+[Zscaler and Cymulate Deployment Guide](/downloads/zscaler-technology-partners/c-e/zscaler-and-cymulate-deployment-guide/Zscaler-Cymulate-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/c-e/zscaler-and-cymulate-deployment-guide/Zscaler-Cymulate-Deployment-Guide-FINAL.pdf)

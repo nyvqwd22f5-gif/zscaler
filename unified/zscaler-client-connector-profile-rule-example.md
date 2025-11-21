@@ -1,0 +1,8 @@
+# Zscaler Client Connector Profile Rule Example
+Source: https://help.zscaler.com/zscaler-client-connector/zscaler-client-connector-profile-rule-example
+PDF: https://help.zscaler.com/pdf/com/en/1328906.pdf
+
+In the Zscaler Client Connector Portal, you can configure [app profiles](/zscaler-client-connector/about-zscaler-app-profiles) by adding policy rules to each profile. You can select the order of precedence among the rules as well as to whom each rule applies (i.e., to all users or to different groups of users). When a user enrolls the app with the Zscaler service, the app takes into account the order of precedence and the identity of the user in order to download an app profile with the appropriate policy rule. To learn more, see [Configuring Zscaler Client Connector Profiles](/zscaler-client-connector/configuring-zscaler-app-profiles).
+Consider an organization that has configured 5 app profile policies for Windows (see image below). The rules are listed in the order of precedence (with the rule order value listed in **Rule#** column).
+When a user who belongs to the Support user group enrolls with the Zscaler service, Zscaler Client Connector begins by checking whether rule 1 applies for the user. In this example, it does not as rule 1 applies only to the Finance user group. The app moves on to rule 2, which likewise does not apply. It then moves on to rule 3, and upon determining it applies to the user, downloads the profile containing the appropriate policy rule.
+![An example of an organization's configured Zscaler Client Connector profile policies](/downloads/z-app/configuring-policy-and-administration-settings/zscaler-app-profiles/zscaler-app-profile-rule-example/Zscaler-App-Profile-Example.png)

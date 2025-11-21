@@ -1,0 +1,9 @@
+# Understanding ZPA, ZIA, and Zscaler Client Connector Clouds
+Source: https://help.zscaler.com/zpa/understanding-zpa-zia-and-zscaler-client-connector-clouds
+PDF: https://help.zscaler.com/pdf/com/en/1485051.pdf
+
+Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) have multi-cloud infrastructures. An organization is provisioned on one ZIA cloud and its traffic is processed by that ZIA cloud only. To learn more about ZIA and to find the name of your ZIA cloud, see [Understanding the ZIA Cloud Architecture](/zia/understanding-zscaler-cloud-architecture) and [What Is My Cloud Name for ZIA?](/zia/what-my-cloud-name-zia).
+For organizations that have ZPA, an organization is provisioned on one ZPA cloud and its traffic is processed by that ZPA cloud only. To learn more about ZPA and to find the name of your ZPA cloud, see [Understanding the ZPA Cloud Architecture](/zpa/understanding-zpa-cloud-architecture) and [What Is My Cloud Name for ZPA?](/zpa/what-my-cloud-name-zpa).
+If you have multiple ZIA and ZPA tenants, any postures, Machine Tunnel Tokens, and Trusted Networks you are using come from one ZIA tenant and one ZPA tenant. If a user needs both ZIA and ZPA, consolidate those users to a single ZPA tenant and a single ZIA tenant.
+Every ZIA cloud has an associated Zscaler Client Connector Portal. The Zscaler Client Connector Portals (zscaler.net and zscalertwo.net) can communicate with either of the ZPA clouds (private.zscaler.com and zpatwo.net). The following diagram shows the association between the ZPA, Zscaler Client Connector, and ZIA clouds at a high level.
+![Diagram of the ZIA, ZPA, and Zscaler Client Connector clouds](/downloads/zpa/getting-started/understanding-zpa-zia-and-zscaler-client-connector-clouds/Final%20update.png)

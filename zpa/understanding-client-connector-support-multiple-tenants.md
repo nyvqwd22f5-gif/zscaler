@@ -1,0 +1,11 @@
+# Understanding Zscaler Client Connector Support for Multiple Tenants
+Source: https://help.zscaler.com/zpa/understanding-client-connector-support-multiple-tenants
+PDF: https://help.zscaler.com/pdf/com/en/1485516.pdf
+
+[Zscaler Client Connector](/z-app/what-zscaler-app) supports two Zscaler Tunnels (Z-Tunnels) between Zscaler Client Connector and a Zscaler Private Access (ZPA) Public Service Edge, or between an App Connector and a ZPA Private Service Edge.
+Support for multiple tenants allows you to change between your primary tenant and one or more partner tenants without needing to log out and log back in to Zscaler Client Connector. For example, the primary tenant, Customer 1, has an overseas client, Customer 2. A user from Customer 1 can access Customer 2's ZPA tenant without logging out. Customer 1's ZPA tenant is automatically disconnected when the connection is made to Customer 2. You can also configure an access policy using a new client type. To learn more, see [Configuring Access Policies](/zpa/configuring-access-policies).
+![Multiple tenants in the Zscaler Client Connector](/downloads/tech-pubs-drafts/zpa-draft-articles/about-client-connector-support-multiple-tenants/zpa-client-connector-multiple-tenants.png?1664996027)
+Zscaler Client Connector supports only a single active tunnel at a time (i.e., there is no concurrent access). ZPA users can switch between the primary and partner tunnels, but cannot connect to both simultaneously. To learn more, see [Adding a Partner Tenant to Zscaler Client Connector](/client-connector/adding-partner-tenant-zscaler-client-connector).
+Zscaler Client Connector support for multiple tenants is configured in Zscaler Client Connector and the Zscaler Client Connector Portal. To configure Zscaler Client Connector support for multiple tenants:
+- Enable Zscaler Client Connector support for multiple tenants in the Zscaler Client Connector Portal. To learn more, see [About Partner Devices](/client-connector/about-partner-devices) and [Enabling ZPA Partner Logins](/client-connector/enabling-zpa-partner-logins).
+- Sign in to Zscaler Client Connector using the partner tenant’s username and password. To learn more, see [Adding a Partner Tenant to Zscaler Client Connector](/client-connector/adding-partner-tenant-zscaler-client-connector).

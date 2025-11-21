@@ -1,0 +1,16 @@
+# Understanding Field Unification, Data Model, and Grouping
+Source: https://help.zscaler.com/uvm/understanding-field-unification-data-model-and-grouping
+PDF: https://help.zscaler.com/pdf/com/en/1529763.pdf
+
+Field unification is the process of resolving conflicts and transforming data attributes in records merged during entity unification. Field unification is a two-step process. First, attribute reconciliation addresses conflicts in merged entity attribute values, resolving them via system defaults or source-prioritized logic. Second, attribute transformation applies business rules to classify and enrich data. To learn more, see [What Is Data Unification?](/uvm/what-data-unification) and [Configuring Field Unification](/uvm/configuring-field-unification).
+In addition to field unification, the Data Model, the Unified Vulnerability Management (UVM) application grouping rules, and the Asset Exposure Management (AEM) application grouping rules affect field values. Rules configured in the applications' grouping rules update the corresponding field unification rules, and rules configured in field unification update the corresponding rules in the data model, unidirectionally.
+![286bc40d-1574-466c-8d9c-763ad0d1f1be.png](/downloads/uvm/configure/data-unification/managing-field-unification/286bc40d-1574-466c-8d9c-763ad0d1f1be.png)
+Field Unification vs. Data Model
+All fields within the Zscaler Security Operations (SecOps) platform are preconfigured with system-defined reconciliation logic in the Data Model. While the Data Model allows for advanced default value configurations, reconciliation logic can be achieved with the simple, no-code field unification rules. When you first configure field unification for a specific field, the system prompts you to unlink and override on the Data Unification > Fields page to confirm this change. This action overrides the existing Data Model configuration.
+[See image.](#through-data-model)
+Creating or updating a field unification rule populates and overrides the corresponding Data Model logic, but any subsequent changes made to the Data Model's rule for that field are not reflected in the field unification rule. Always save after unlinking and overriding to confirm updates.
+Field Unification vs. Grouping Rules
+SecOps ticket (e.g., Ticket, Violation Ticket) grouping rules are typically managed through the different applications (e.g., UVM, AEM), but they can also be configured in Data Unification > Fields. When you create or update a SecOps ticket grouping rule in the app, it unidirectionally overrides the corresponding rule in field unification. This means that changes made in the app are reflected in the associated field unification rules, but not vice versa. So while it's possible to configure grouping rules in field unification and apply them to tickets, these changes won't sync back to the app's grouping rules setup page.
+[See image.](#through-grouping-rules)
+[]![3c7c7452-5dda-4a71-8088-c866d78b7c53.png](/downloads/uvm/configure/data-unification/managing-field-unification/3c7c7452-5dda-4a71-8088-c866d78b7c53.png)
+[]![46a797a2-1876-4669-9ee6-e3c2c554e6f8.png](/downloads/uvm/configure/data-unification/managing-field-unification/46a797a2-1876-4669-9ee6-e3c2c554e6f8.png)

@@ -1,0 +1,83 @@
+# Audit Log Events
+Source: https://help.zscaler.com/zpc/audit-log-events
+PDF: https://help.zscaler.com/pdf/com/en/1433921.pdf
+
+ZPC records various actions performed by administrators in the following modules and displays the list in a chronological order on the [Audit Logs](/zpc/about-audit-logs) page:
+- [Administration](#adminlogs)
+- [Alerts](#alertlogs)
+- [IaC Integration](#iaclogs)
+- [Policies](#policylog)
+- [Reports](#reportlogs)
+- [Vulnerability Management](#vulnerability)
+- [Kubernetes Cluster](#kubernetes)
+- []Create Administrator Accounts
+- Edit Administrator
+- Delete Administrator
+- Create Group
+- Edit Group
+- Delete Group
+- Create Business Unit
+- Edit Business Unit
+- Delete Business Unit.
+- Create Role
+- Edit Role
+- Delete Role
+- Edit SSO
+- Enable SSO for Group
+- Disable SSO
+- Delete SSO
+- Enable Just-in-Time (JIT) Provisioning
+- Export User
+- Change Password
+- Reset Password
+- Update User Profile
+- Change User Group
+- Create Cloud Storage or ITSM Integration
+- Edit Cloud Storage or ITSM Integration
+- Delete Cloud Storage or ITSM Integration
+[]The following actions performed in the version control (GitHub, GitLab, and Azure Repos) and CI/CD (Jenkins, GitHub Actions, Azure Pipelines, and others) systems are recorded.
+- Onboard Accounts or Organizations
+- Offboard Accounts or Organizations
+- Create an Integration
+- Edit an Integration
+- Delete an Integration
+- []**Cloud Policies**
+- Enable Policy
+- Edit Policy
+- Disable Policy
+- **IaC Policies**
+- Enable Policy
+- Edit Policy
+- Disable Policy
+- Allow Policy
+- Skip Policy
+- **[]Cloud Alerts**
+- Create Alert Rule
+- Edit Alert Rule
+- Enable Alert
+- Disable Alert
+- Resolve Alert
+- **IaC Alerts**
+- Create Alert Rule
+- Edit Alert Rule
+- Enable Alert
+- Disable Alert
+- Resolve Alert
+- []**OnDemand Report**
+- Export Report for Compliance
+- Export Report for Alerts
+- Export Report for Assets
+- **Scheduled Report**
+- Create Report
+- Update Report
+- Delete Report
+- []Add vulnerability integration for container registries and cloud workloads
+- Delete vulnerability integration for container registries and cloud workloads
+- Create vulnerability scan rule
+- Edit vulnerability scan rule
+- Delete vulnerability scan rule
+- Enable vulnerability scan rule
+- Disable vulnerability scan rule
+- Run vulnerability scan
+- []Create Kubernetes Integration
+- Delete Kubernetes Integration

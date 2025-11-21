@@ -1,0 +1,7 @@
+# Zscaler and Ivanti Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-ivanti-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1507001.pdf
+
+The Zscaler and Ivanti Deployment Guide provides instructions on how to configure Zscaler Private Access (ZPA) and Zscaler Private Access (ZPA) to work with Ivanti Neurons for MDMs.
+By combining Zscaler with Ivanti, organizations can provide users with seamless, secure, reliable access from all managed endpoints—both Bring Your Own Device (BYOD) and corporate owned. Ivanti provides device management and endpoint security controls to secure the data in rest. and Zscaler secures access and protects the data in motion against sophisticated cyber threats using granular corporate browsing policies, advanced context, and identity verification. Together Ivanti and Zscalercombine to optimize digital experiences and enable the everywhere workplace for a hybrid workforce.
+[Zscaler and Ivanti Deployment Guide](/downloads/zscaler-technology-partners/operations/zscaler-and-ivanti-deployment-guide/Zscaler-Ivanti-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/operations/zscaler-and-ivanti-deployment-guide/Zscaler-Ivanti-Deployment-Guide-FINAL.pdf)

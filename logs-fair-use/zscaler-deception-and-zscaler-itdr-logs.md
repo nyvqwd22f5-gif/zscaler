@@ -1,0 +1,9 @@
+# Zscaler Deception and Zscaler ITDR Logs
+Source: https://help.zscaler.com/logs-fair-use/zscaler-deception-and-zscaler-itdr-logs
+PDF: https://help.zscaler.com/pdf/com/en/1409091.pdf
+
+For Zscaler Deception,* logs* mean collectively the Security Telemetry Logs and the Audit Logs. *Security Telemetry Logs* mean the security telemetry that is generated based on the interactions between the suspected attackers and the auto-generated decoys. *Audit logs* mean the activity logs of configuration changes made by you on the Deception Admin Portal.
+Logs do not include your internal system logs. Logs are retained by Zscaler for a rolling period of 12 months during the term of subscription. When the subscription term ends or expires, Zscaler deletes the logs within 30 days. If you ordered the Deception log streaming service, then you can stream the logs in real-time to an on-premises solution. The logs can be sent to multiple systems that allow you to retain them for however long you choose.
+During the deployment process, you can choose to have your logs stored in the United States, the European Union, or the Asia Pacific region. If you use GenAI Decoys ([Built with Llama](https://www.llama.com/llama3_1/license/)), inputs from potential threat actors will be processed in the US region for all customers.
+Zscaler ITDR Data
+When ITDR is enabled, data is queried from LDAP on the domain controller within the customer's environment, processed on the customer's endpoint, and the processed analytics are stored on the Deception Admin Portal. This data is retained in the Deception Admin Portal for a rolling period of 12 months during the term of subscription. When the subscription term ends or expires, Zscaler deletes this data within 30 days.

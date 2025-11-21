@@ -1,0 +1,28 @@
+# Understanding Private Service Edge Software Upgrades for Private Applications
+Source: https://help.zscaler.com/unified/understanding-private-service-edge-software-upgrades-private-applications
+PDF: https://help.zscaler.com/pdf/com/en/1496796.pdf
+
+When creating Private Service Edge groups, you can specify a day and time where the Private Service Edge software is updated to the latest version. When a new software version is available, a Private Service Edge in the group is chosen at random to update. While updating, the Private Service Edge restarts and becomes temporarily unavailable. Any new application access is redirected to the other Private Service Edges in the Private Service Edge group.
+The update occurs within a 4-hour window and starts at the specified time for the Private Service Edge group. After a Private Service Edge has successfully updated, another eligible Private Service Edge in the group is chosen and updated. This continues until the 4-hour window expires or all the Private Service Edges in the group have updated successfully. If a software update is unsuccessful, the update process is retried in every periodic software update until all Private Service Edges are upgraded.
+If the Private Service Edges for your internal applications are using software that is not functioning as expected, Zscaler Support might update software for these Private Service Edges prior to the next periodic software update. Zscaler Support informs your organization's administrators in advance if there is a need for an immediate software update.
+To learn more, see [Scheduling Periodic Software Updates for a Private Service Edge Group](/unified/scheduling-periodic-software-updates-private-service-edge-group) and [Manually Updating Private Service Edge Software](/unified/manually-updating-private-service-edge-software-private-applications). For information on locally updating operating system software or software packages via a deployed Private Service Edge console, see [Managing Deployed Private Service Edges](/unified/manually-updating-private-service-edge-software-private-applications).
+About the Private Service Edge Upgrade Status
+On the Private Service Edges page (Infrastructure > Private Access > Component > Private Service Edges), you can see the upgrade status of each Private Service Edge in the **Upgrade Status** column. There are 6 types of statuses:
+- [Not Scheduled](#notscheduled)
+- [Scheduled](#schedule)
+- [Success](#success)
+- [Failure](#failure)
+- [Partial Failure](#partialFailure)
+- [Restarting](#restart)
+About Private Service Edge Host Operating System Management
+Private Service Edges are licensed so that Zscaler can periodically update their software. However, updates to the host OS is the organization's responsibility, not Zscaler's. The Private Service Edge software is designed to be compatible with updates to the host OS. Zscaler recommends updating the host OS whenever you determine it is necessary. To learn more, see [Managing Deployed Private Service Edges](/unified/managing-deployed-private-service-edges-private-applications) and [Operating System Security](/unified/private-service-edge-deployment-prerequisites#Firewall).
+[]After a Private Service Edge is created, its initial Upgrade Status displays **Not Scheduled**.
+[]If a Private Service Edge is scheduled to upgrade to the latest version, its Upgrade Status displays **Scheduled**. When you hover over the Scheduled status, it displays the following information:
+- **Scheduled Version**: Displays the scheduled software version that the Private Service Edge updates to.
+- **Upgrade Window**: Displays the 4-hour window during which the Private Service Edge upgrades.
+When the Private Service Edge is scheduled for an update, you can't change the periodic software update time for that particular Private Service Edge.
+If a Private Service Edge is scheduled for an update, you can also manually update the Private Service Edge before the scheduled time. To learn more, see [Manually Updating Private Service Edge Software](/unified/manually-updating-private-service-edge-software-private-applications).
+[]If a Private Service Edge successfully updates to the latest version, its Upgrade Status displays **Success**. When you hover over the Success status, it displays the Scheduled Version, which is the scheduled software version that the Private Service Edge updated to.
+[]If a Private Service Edge fails to update to the latest version, its Upgrade Status displays **Failure**. When you hover over the Failure status, it displays the Scheduled Version, which is the scheduled software version that the Private Service Edge failed to update to. Zscaler recommends that you restart the Private Service Edge virtual machine (VM) to recover it from the failure state. If a software update is unsuccessful, the update process is retried in every periodic software update until all Private Service Edges are upgraded.
+[]If a supporting file fails to upgrade, the Private Service Edge's Upgrade Status displays **Partial Failure**. When you hover over the **Information **icon next to the supporting file, it displays the Scheduled Version, which is the scheduled supporting file version that the Private Service Edge failed to update. Zscaler recommends [troubleshooting](/unified/troubleshooting-private-service-edges-private-applications) to figure out why the supporting file failed to upgrade.
+[]After the Private Service Edge downloads the new software version, it needs to restart to complete the upgrade. Its Upgrade Status is **Restarting**.

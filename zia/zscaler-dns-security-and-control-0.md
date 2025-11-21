@@ -1,0 +1,7 @@
+# Zscaler DNS Security and Control
+Source: https://help.zscaler.com/zia/zscaler-dns-security-and-control-0
+PDF: https://help.zscaler.com/pdf/com/en/1451391.pdf
+
+The Zscaler Reference Architecture series delivers best practices based on real-world deployments. The recommendations in this series were developed by Zscaler's transformation experts from across the company. This guide will steer you through the architecture process and provide technical deep dives into specific platform functionality and integrations. The Zscaler Reference Architecture series is designed to be modular, so this guide will show you how to configure a different aspect of the platform in order to allow you meet your specific policy goals.
+Zscaler DNS Security and Control services offer mechanisms to take control of your DNS architecture and response. By proxying the DNS request, you can enforce your organization’s DNS policies in the Zscaler Zero Trust Exchange (ZTE). When the DNS request reaches the ZTE, the request is open and inspected. No DNS requests can bypass inspection unless you authorize it, as you can restrict your users to only using DNS servers you specify.
+[Zscaler DNS Security and Control: Reference Architecture Guide](/downloads/zia/reference-architecture/zscaler-dns-security-and-control-0/zscaler-dns-security-and-control-reference-architecture.pdf) [Download PDF](/downloads/zia/reference-architecture/zscaler-dns-security-and-control-0/zscaler-dns-security-and-control-reference-architecture.pdf)

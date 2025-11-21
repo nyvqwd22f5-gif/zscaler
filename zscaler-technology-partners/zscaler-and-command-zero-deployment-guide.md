@@ -1,0 +1,9 @@
+# Zscaler and Command Zero Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-command-zero-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1518241.pdf
+
+The Zscaler and Command Zero Deployment Guide provides instructions on integrating Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) to work with the Command Zero platform.
+Zscaler and Command Zero built a solution that helps practitioners execute traffic data-driven threat hunting and complex investigations. The solution queries ZIA and ZPA data in the Command Zero platform to provide actionable insights to security teams.
+When a user account, domain, or file name is involved in a security event, analysts can ask questions about the related activity as observed by Zscaler. Zscaler helps the analyst understand, contextualize, and correlate the activity with data from other systems such as Identity and Access Management (IAM), Endpoint Detection and Response (EDR), email, and code repositories. Zscaler shortens the mean time to understand and remediate.
+Analysts can ask hunting questions about users blocked by policy violations, users attempting to access anonymizing services, users attempting to access URLs categorized as malicious content, and more.
+[Zscaler and Command Zero Deployment Guide](/downloads/zscaler-technology-partners/operations/zscaler-and-command-zero-deployment-guide/Zscaler-Command-Zero-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/operations/zscaler-and-command-zero-deployment-guide/Zscaler-Command-Zero-Deployment-Guide-FINAL.pdf)

@@ -1,0 +1,9 @@
+# Zscaler Cellular (SIM and Cellular Edge) Licensing and Fair Use
+Source: https://help.zscaler.com/logs-fair-use/zscaler-cellular-sim-and-cellular-edge-licensing-and-fair-use
+PDF: https://help.zscaler.com/pdf/com/en/1507401.pdf
+
+Zscaler Cellular is a Software as a Service (SaaS) product that is licensed by the number of cellular devices being protected and the data usage of the protected cellular devices for the subscription term.
+A *cellular device* is an endpoint with a Zscaler SIM (or e-SIM) such as an IoT, IIoT, or OT device. The number of protected cellular devices is determined by the number of Zscaler SIMs purchased from Zscaler (for Zscaler SIM) or unique IP addresses accessing Zscaler Cellular Edge (for Cellular Edge).
+A data pool is purchased for the protected cellular devices. This data pool can be used by any SIM/IP address assigned to that data pool. The data pool resets each month, and unused data is not carried over.
+Ensure that you order the correct number of SIMs and corresponding IP addresses as needed. If additional SIMs, IP addresses, or data usage is needed during a subscription term, refer to Zscaler Sales or your Channel Partner. Zscaler monitors and periodically reviews the number of licensed protected cellular devices and their bandwidth usage to ensure license compliance.
+The usage of Zscaler Cellular is expected to be in accordance with the [Acceptable Use Policy](/legal/acceptable-use-policy). If data usage exceeds the data pool limit within a month, then an overage charge will be incurred at the pre-agreed overage rate, per GB. Contact Zscaler Sales or your Channel Partner to discuss available options.

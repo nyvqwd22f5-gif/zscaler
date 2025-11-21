@@ -1,0 +1,8 @@
+# Zscaler and Trend Micro Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-trend-micro-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1531222.pdf
+
+The Zscaler and Trend Micro Deployment Guide provides instructions on using Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) features with the Trend Micro Vision One Security Playbooks.
+The ZIA and Trend Micro integration supports adaptive policy enforcement by leveraging risk insights from Trend Vision One to control users' internet access in real time via ZIA. When a user exceeds a defined risk threshold, Trend Vision One automatically triggers an action to add them to a ZIA Restricted User Group. ZIA then applies predefined policies, such as limiting access to specific websites, blocking downloads, or restricting cloud app usage.
+The ZPA and Trend Micro integration enables organizations to dynamically restrict access to internal or private applications using risk insights from Trend Vision One. When a user’s Trend Micro calculated risk score exceeds a configured threshold, Trend Vision One can automatically place the user into a ZPA Restricted User Group through SCIM provisioning.
+[Zscaler and Trend Micro Deployment Guide](/downloads/zscaler-technology-partners/t-z/zscaler-and-trend-micro-deployment-guide/Zscaler-Trend-Micro-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/t-z/zscaler-and-trend-micro-deployment-guide/Zscaler-Trend-Micro-Deployment-Guide-FINAL.pdf)

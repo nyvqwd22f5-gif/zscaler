@@ -1,0 +1,10 @@
+# Zscaler and Microsoft Defender for Cloud Apps Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-microsoft-defender-cloud-apps-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1452666.pdf
+
+The Zscaler and Microsoft Defender for Cloud Apps Deployment Guide provides instructions on integrating Zscaler Internet Access (ZIA) with the Microsoft Defender cloud app security platform.
+Microsoft Defender for Cloud Apps is a Cloud Access Security Broker (CASB) that supports various deployment modes including log collection, API connectors, and reverse proxy. It provides rich visibility, control over data travel, and sophisticated analytics to identify and combat cyberthreats across Microsoft and third-party cloud services.
+ZIA log messages are stored in Zscaler Nanolog Streaming Service (NSS). When an organization deploys NSS for various log feeds, each NSS opens a secure tunnel to the Nanolog in the Zscaler cloud. The Nanolog then streams copies of the logs to each NSS in a highly compressed format to reduce bandwidth footprint. The original logs are retained on the Nanolog.
+When NSS receives the logs from the Nanolog, it unscrambles them, applies the configured filters to exclude unwanted logs, converts the filtered logs to the configured output format so they can be parsed by Microsoft Defender for Cloud Apps, and then streams the logs to Microsoft Defender for Cloud Apps using an Authentication Token generated in the Microsoft Defender for Cloud Apps portal.
+For more information on Microsoft as a Zscaler partner, see the [Microsoft partner page](https://www.zscaler.com/partners/microsoft).
+[Zscaler and Microsoft Defender for Cloud Apps Deployment Guide](/downloads/zscaler-technology-partners/data/zscaler-and-microsoft-defender-cloud-apps-deployment-guide/Zscaler-Microsoft-Defender-Cloud-Apps-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/data/zscaler-and-microsoft-defender-cloud-apps-deployment-guide/Zscaler-Microsoft-Defender-Cloud-Apps-Deployment-Guide-FINAL.pdf)

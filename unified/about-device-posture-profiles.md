@@ -1,0 +1,31 @@
+# About Device Posture Profiles
+Source: https://help.zscaler.com/zscaler-client-connector/about-device-posture-profiles
+PDF: https://help.zscaler.com/pdf/com/en/1328941.pdf
+
+The Device Posture profile is a set of criteria evaluated on devices. Policies in both ZIA and ZPA can be configured based on the outcome of this evaluation. For example, if you specify a file path in a device posture profile, the user has access to the application if the user's system has the file specified in the posture profile.
+Device posture profiles provide the following benefits and allow you to:
+- Determine access to corporate resources and public applications based on the device posture you set.
+- Ensure a minimum security level is present on the device before allowing access.
+You can define posture profiles in the Device Posture section. You must [configure these device posture profiles](/zscaler-client-connector/configuring-device-posture-profiles) in the Zscaler Client Connector Portal. You can use posture profiles when configuring [access policies](/zpa/configuring-access-policies) in the ZPA Admin Portal and when [adding posture profile trust levels](/zscaler-client-connector/adding-zia-posture-profiles) for ZIA.
+Each posture profile has its own set criteria. To learn more about each posture type, see [Configuring Device Posture Profiles](/zscaler-client-connector/configuring-device-posture-profiles).
+Device Posture Evaluation
+Zscaler Client Connector evaluates device posture profiles every 15 minutes. New connections are established based on updated security postures. Existing connections are not affected by updates to security postures.
+For Zscaler Client Connector version 4.4 and later for Windows, you can configure how often Zscaler Client Connector evaluates the device posture profile. To learn more, see [Configuring Device Posture Profiles](/zscaler-client-connector/configuring-device-posture-profiles).
+The following network changes can trigger a device posture evaluation:
+- The Zscaler service restarts
+- A device:
+- Reboots
+- Joins a network
+- Comes out of hibernation
+- Moves from non-domain joined to domain-joined
+- Moves from a Wi-Fi connection to an Ethernet connection
+- Changes Wi-Fi networks
+About the Device Posture Page
+On the Device Posture page, you can do the following:
+- [Add a device posture profile](/zscaler-client-connector/configuring-device-posture-profiles).
+- [Search for a Device Posture](/zscaler-client-connector/searching-device-posture-profile).
+- View a list of all configured device posture profiles.
+- Create a custom view of the Device Posture page.
+- [Edit a device posture profile](/zscaler-client-connector/editing-or-deleting-items-zscaler-app-portal).
+- [Delete a device posture profile](/zscaler-client-connector/editing-or-deleting-items-zscaler-app-portal).
+![About-Client-Connector-Device-Posture](/downloads/tech-pubs-drafts/client-connector-draft-articles/about-device-posture-profiles/Client-Connector-Device-Posture.png)

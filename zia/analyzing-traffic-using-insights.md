@@ -1,0 +1,37 @@
+# Analyzing Traffic Using Insights
+Source: https://help.zscaler.com/zia/analyzing-traffic-using-insights
+PDF: https://help.zscaler.com/pdf/com/en/1400046.pdf
+
+[Watch a video about Insights](https://fast.wistia.net/embed/iframe/6a988rb6ww)
+To get more information about a chart in a [dashboard](/zia/about-dashboards) or [report](/zia/about-interactive-reports), click an item on the chart and click **Analyze Chart**. The chart is displayed in an** Analytics **>** Insights** window where you can interactively drill down to specific transactions. Alternatively, you can start an analysis by going to the **Analytics** tab and choosing an** ****Insights **window.
+To learn more about the Insights pages, see [About Insights](/zia/about-insights).
+Insights Walkthrough
+The following Web Insights instance will be used to walk you through how to use the Insights pages. This is what the the default Web Insights page looks like. It shows a trend chart for the data type **Overall Traffic**. The chart shows the overall traffic for the current day in terms of transactions.
+![The default Web Insights page with data type, time frame, chart type, and units highlighted](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Default.png)
+Using Insights
+The Web Insights instance above will be used to show you what you can do on any Insights page:
+- [Define Settings](#defining)
+- [Interactively Drill Down](#drilldown)
+- [Start a New Analysis](#new)
+- [Save Your Analysis](#save)
+[]At any time, you can change the different options to display the metrics you want to see. Let's say you want to change the timeframe and the chart type. The following image shows the timeframe has been customized to the previous month, and the chart type has been changed to a pie chart. Even though these two options have been changed, you're still viewing **Overall Traffic**, but it's now for the custom dates selected.
+![The Web Insights page with a pie chart and customized timeframe](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Time-Chart-Type-Customized.png)
+You can choose whichever data type you want. The following image shows a new data type has been selected, **Advanced Threat Super Category**. Once that data type is selected, the pie chart changes to reflect the results of your selection. You're now seeing the **Advanced Threat Super Category** traffic for the custom dates selected. As you edit the chart, your workflow is recorded in the history bar below the chart.
+![The Web Insights page with the data type Advanced Threat Super Category and the history bar highlighted](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Data-Type-History-Bar.png)
+[]There are a number of ways to interactively drill down and get more granular data. Each data type has its own set of filters, located on the left pane. If you look at the filters for **Advanced Super Threat Category**, you'll see one of them is **User**. The following image shows the filter **User** has been selected. Think of data types as the "Grouped by..." section, so the image is showing you **Any users**, grouped by** Advanced Threat Super Category** for the custom dates selected.
+![The Web Insights page with the data type Advanced Threat Super Category and the filter User](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Data-Type-Filter.png)
+The image shows the category **Malicious Content** as the biggest portion. You can click on that portion, or any other portion, for a closer drill down. The following image shows the **Malicious Content** portion has been selected; the portion's drop-down menu reveals the data types you can choose from for that portion. The **User** data type has been selected.
+![The Web Insights page with a drill down on the Malicious Content portion in the pie chart](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Malicious-Content-Portion.png)
+After selecting **User**, the pie chart changes. You're now seeing traffic for the **Advanced Threat Super Category**, specifically for **Malicious Content**, grouped by **users**. There are two users displayed that have contributed to the **Malicious Content** category for the custom dates selected.
+![The Web Insights page with pie chart showing users' contribution to Advanced Super Threat Category](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Data-Type-User.png)
+If you want a closer look at one of the users, you can drill down further by clicking on a user, and selecting from the options displayed in the portion's drop-down menu. The following image shows one of the users has been selected. You can click on **View Logs **from the portion's drop-down menu to look at that user's **Malicious Content** category logs.
+![The Web Insights page with drill down on a specific user in the pie chart](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-User-Portion.png?1615573605)
+Once you click **View Logs**, you'll be directed to the Logs page. The following image displays the user's **Malicious Content** category logs. To learn more about the Logs pages, see [About Insights Logs](/zia/about-insights-logs).
+![The Web Insights Logs page with user’s logs](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/insights/analyzing-traffic-using-insights/ZIA-6.1-Web-Insights-Logs-User.png)
+[]You can also start a new analysis or change the focus of your investigation, as follows:
+- Click **Start Over** to go back to the default chart. The data type menu above the chart is set to **Overall Traffic**, filters are reset, and all charts, except the default, are deleted from the history bar.
+- Choose a different data type from the menu at the top. This automatically resets the filters.
+[]As you work with your data, the tool records the workflow in the history bar below the chart. Every time you make a change to the chart, such as add a filter or change the chart type, the Admin Portal adds the previous version to the history bar. You can then click any chart in the history bar to see it again. If you view an earlier version and change it, all subsequent versions are automatically deleted. This enables an administrator to review the various stages of the investigation and change direction for the analysis upon review, if necessary. The history bar can retain up to 50 versions of the chart. If there are more than 50 versions, the portal deletes the oldest versions as new ones are added. The chart icons are numbered, so you can track how many versions you have.
+You can do the following:
+- Delete charts from your workflow.
+- Click **Print View** to print the entire sequence of charts in the history bar.

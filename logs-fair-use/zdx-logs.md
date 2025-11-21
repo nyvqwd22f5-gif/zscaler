@@ -1,0 +1,10 @@
+# ZDX Logs
+Source: https://help.zscaler.com/logs-fair-use/zdx-logs
+PDF: https://help.zscaler.com/pdf/com/en/1390936.pdf
+
+In order to provide the Zscaler Digital Experience (ZDX) service, Zscaler has the right to process, use, reproduce, store, modify, and display the information from logs as defined in this article. For ZDX,* logs* are defined as the telemetry metadata collected via ZDX probes and Microsoft 365 probes, as well as the metadata that correlates with logs of other Zscaler SaaS products, such as Zscaler Internet Access (ZIA) or Zscaler Private Access (ZPA). Zscaler retains the logs on a rolling period of at least two weeks or two days during your subscription term, depending on your subscription. When the subscription term ends or expires, the logs are deleted by Zscaler according to applicable retention cycles.
+ZDX supports Diagnostics mode to enable remote live diagnostics and troubleshooting by an administrator. Diagnostics might result in the capture and storage of packet capture files, as well as additional telemetry about user devices, including software process level information of the devices (i.e., ZDX Deep Tracing data). Zscaler retains the ZDX Diagnostics reports on a rolling period of at least two weeks or two days during your subscription term, depending on your subscription. When the subscription term ends or expires, the ZDX Diagnostics reports and Diagnostics data are deleted by Zscaler according to applicable retention cycles.
+- For the ZDX Snapshot feature, ZDX Snapshots are retained by Zscaler for 90 days.
+- For the ZDX Copilot feature, ZDX Copilot prompts and responses are stored by Zscaler for 14 days as part of the session history. ZDX Copilot is not trained using any customer data.
+- For the ZDX Network Intelligence feature, Zscaler retains the logs for a period of one year.
+Logs are stored in the United States, European Union, Australia, or Singapore. If you subscribe to the ZDX Data Residency feature, the logs are stored in the geographic region selected by you.

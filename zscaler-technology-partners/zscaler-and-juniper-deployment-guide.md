@@ -1,0 +1,9 @@
+# Zscaler and HPE Juniper Networking Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-juniper-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1390391.pdf
+
+The Zscaler and HPE Juniper Networking Deployment Guide provides instructions on how to configure Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) to work with the Juniper Mist platform.
+Juniper Mist provides prebuilt connectors specifically designed for the HPE Juniper Networking SRX Series Firewalls and Juniper Session Smart Routers deployed as WAN edge devices. These connectors facilitate seamless integration with your Security Service Edge (SSE) deployments. With minimal configuration, you can integrate the SSE into the Juniper Mist Managed Service Provider (MSP) portal. As a result, your WAN Edge device establishes connections to the SSE using either IPSec or GRE protocols.
+To improve cloud-to-cloud connectivity, Juniper Mist offers automated Zscaler tunnel provisioning. WAN Assurance delivers an easy-to-use workflow for default Zscaler connections. This integration allows you to establish connections from your devices using predefined settings. Juniper Mist MSP portal allows simplified configuration and management of Zscaler SSE connections—eliminating the need for additional platform logins.
+Juniper Networks, Inc. was acquired by Hewlett Packard Enterprise (HPE) in July 2025.
+[Zscaler and HPE Juniper Networking Deployment Guide](/downloads/zscaler-technology-partners/f-k/zscaler-and-juniper-deployment-guide/Zscaler-Juniper-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/f-k/zscaler-and-juniper-deployment-guide/Zscaler-Juniper-Deployment-Guide-FINAL.pdf)

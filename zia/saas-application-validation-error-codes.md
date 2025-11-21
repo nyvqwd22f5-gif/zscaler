@@ -1,0 +1,14 @@
+# SaaS Application Validation Error Codes
+Source: https://help.zscaler.com/zia/saas-application-validation-error-codes
+PDF: https://help.zscaler.com/pdf/com/en/1401571.pdf
+
+Following are the validation error codes when [adding SaaS applications](/zia/adding-saas-application-tenants):
+| Error Code | Description | What to Do |
+| ---------- | ----------- | ---------- |
+| 1 | An internal error occurred. | Retry validating the tenant after a few minutes. If the error persists, contact Zscaler Support. |
+| 2 | The tenant validation timed out or was interrupted. It takes at least one minute to validate a tenant. | Retry validating the tenant after a few minutes. If the error persists, contact Zscaler Support. |
+| 4 | The Zscaler service is unable to validate the tenant. This error might occur because there's an ongoing release upgrade or a network issue. | Retry validating the tenant later. If the error persists, contact Zscaler Support. |
+| 201 - 299 | The serialization of the JSON response failed. | Retry validating the tenant later. If the error persists, contact Zscaler Support. |
+| 400 - 499 | An error occurred when authenticating or authorizing the SaaS application. | Check if the Enterprise ID is valid and you gave the Zscaler service the right permissions to authorize the SaaS application. If the error persists, contact Zscaler Support. |
+| 500 | An internal error occurred. | Retry validating the tenant after a few minutes. If the error persists, contact Zscaler Support. |
+| 501 - 599 | An internal server error occurred from the SaaS application provider. | Retry validating the tenant later. If the error persists, contact Zscaler Support. |

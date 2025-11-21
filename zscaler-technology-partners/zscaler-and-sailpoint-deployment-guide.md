@@ -1,0 +1,7 @@
+# Zscaler and SailPoint Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-sailpoint-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1391311.pdf
+
+The Zscaler and SailPoint Deployment Guide provides instructions on integrating Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) with the SailPoint identity platform for a specific use case, and does provide instructions on configuring SailPoint for typical user authentication and provisioning.
+SailPoint provides security software products and services. The company offers identity governance software that integrates role, access request, and compliance management solutions. SailPoint uses the SCIM integration between Zscaler and SailPoint to import all users and groups from the Zscaler instance to the customer’s SailPoint instance for the purpose of providing visibility of identity and entitlements in the organization.
+[Zscaler and SailPoint Deployment Guide](/downloads/zscaler-technology-partners/identity/zscaler-and-sailpoint-deployment-guide/Zscaler-SailPoint-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/identity/zscaler-and-sailpoint-deployment-guide/Zscaler-SailPoint-Deployment-Guide-FINAL.pdf)

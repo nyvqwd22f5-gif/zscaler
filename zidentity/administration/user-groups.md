@@ -1,0 +1,117 @@
+# ZIdentity Help
+Source: https://help.zscaler.com/zidentity/administration/user-groups
+
+## Contents
+- **Getting Started**
+  - [What Is ZIdentity?](/zidentity/what-zidentity)
+  - [Setting Up Your Zscaler Account](/zidentity/setting-your-zscaler-account)
+  - [Step-by-Step Configuration Guide for ZIdentity](/zidentity/step-step-configuration-guide-zidentity)
+  - [Migrating Zscaler Service Admins to ZIdentity](/zidentity/migrating-zscaler-service-admins-zidentity)
+  - **Admin Portal**
+    - [Accessing and Navigating the ZIdentity Landing Page](/zidentity/accessing-and-navigating-zidentity-landing-page)
+    - [Accessing and Navigating the ZIdentity Admin Portal](/zidentity/accessing-and-navigating-zidentity-admin-portal)
+    - [Resetting the Login Credentials or MFA](/zidentity/resetting-login-credentials-or-mfa)
+    - [About the Dashboard](/zidentity/about-dashboard)
+    - [Customizing Branding](/zidentity/customizing-branding)
+    - [Managing User Profile](/zidentity/managing-user-profile)
+    - [Editing or Deleting Items](/zidentity/editing-or-deleting-items)
+    - [Using Tables](/zidentity/using-tables)
+    - [Using the Zscaler Help Browser](/zidentity/using-zscaler-help-browser)
+    - [Ranges & Limitations](/zidentity/ranges-limitations)
+- **Administration**
+  - [Enabling Remote Assistance](/zidentity/enabling-remote-assistance)
+  - [About Linked Services](/zidentity/about-linked-services)
+  - [Adding Guest Domains](/zidentity/adding-guest-domains)
+  - **Admins and Roles**
+    - [About ZIdentity Admin Roles](/zidentity/about-zidentity-admin-roles)
+    - [Adding ZIdentity Admin Roles](/zidentity/adding-zidentity-admin-roles)
+    - [Admin Roles and Permissions](/zidentity/admin-roles-and-permissions)
+    - [Assigning CXO Insight User Role](/zidentity/assigning-cxo-insight-user-role)
+  - **Users**
+    - [About Users](/zidentity/about-users)
+    - [Adding Users](/zidentity/adding-users)
+    - [Importing User Details from a CSV File](/zidentity/importing-user-details-csv-file)
+    - [Viewing Entitlements Assigned to Users](/zidentity/viewing-entitlements-assigned-users)
+    - [Configuring Security Settings for Users](/zidentity/configuring-security-settings-users)
+  - **User Groups**
+    - [About User Groups](/zidentity/about-user-groups)
+    - [Adding User Groups](/zidentity/adding-user-groups)
+    - [Importing User Group Details from a CSV File](/zidentity/importing-group-details-csv-file)
+  - **Attributes**
+    - [About Attributes](/zidentity/about-attributes)
+    - [Adding User Attributes](/zidentity/adding-user-attributes)
+    - [Adding Session Attributes](/zidentity/adding-session-attributes)
+  - **Entitlements**
+    - [About Administrative Entitlements](/zidentity/about-administrative-entitlements)
+    - [About Service Entitlements](/zidentity/about-service-entitlements)
+    - [Assigning Entitlements to Users and User Groups](/zidentity/assigning-entitlements-users-and-user-groups)
+    - [Managing Entitlements](/zidentity/managing-entitlements)
+    - [Managing Device Groups](/zidentity/managing-device-groups)
+  - **Departments**
+    - [About Departments](/zidentity/about-departments)
+    - [Adding Departments](/zidentity/adding-departments)
+  - **IP Locations**
+    - [About IP Locations](/zidentity/about-ip-locations)
+    - [Adding IP Locations](/zidentity/adding-ip-locations)
+    - [Importing IP Locations from a CSV File](/zidentity/importing-ip-locations-csv-file)
+  - **IP Location Groups**
+    - [About IP Location Groups](/zidentity/about-ip-location-groups)
+    - [Adding IP Location Groups](/zidentity/adding-ip-location-groups)
+    - [Importing IP Location Groups from a CSV File](/zidentity/importing-ip-location-groups-csv-file)
+- **Authentication**
+  - [Using ZIdentity as an Identity Provider](/zidentity/using-zidentity-identity-provider)
+  - [Configuring the Authentication Session](/zidentity/configuring-authentication-session)
+  - [Configuring Authentication Levels](/zidentity/configuring-authentication-levels)
+  - [Configuring Multi-Factor Authentication](/zidentity/configuring-multi-factor-authentication)
+  - [Managing Device Token Authentication](/zidentity/managing-device-token-authentication)
+  - [Understanding Step-Up Authentication](/zidentity/understanding-step-up-authentication)
+  - [Configuring Step-Up Authentication](/zidentity/configuring-step-authentication)
+  - [Skipping Two-Factor Authentication](/zidentity/skipping-two-factor-authentication)
+- **Integration**
+  - **External IdP Configuration**
+    - [About External Identity Providers](/zidentity/about-external-identity-providers)
+    - [Adding OpenID Providers](/zidentity/adding-openid-providers)
+    - [Adding SAML Identity Providers](/zidentity/adding-saml-identity-providers)
+    - [Editing or Deleting a SAML Identity Provider](/zidentity/editing-or-deleting-saml-identity-provider)
+    - [Configuring Okta as an External IdP](/zidentity/configuring-okta-external-idp)
+    - [Configuring Microsoft Entra ID as an External IdP](/zidentity/configuring-microsoft-entra-id-external-idp)
+    - [Configuring Microsoft AD FS as an External IdP](/zidentity/configuring-microsoft-ad-fs-external-idp)
+    - [Configuring PingOne as an External IdP](/zidentity/configuring-pingone-external-idp)
+    - [Configuring Auth0 as an External IdP](/zidentity/configuring-auth0-external-idp)
+    - [Configuring OneLogin as an External IdP](/zidentity/configuring-onelogin-external-idp)
+    - [Configuring PingFederate as an External IdP](/zidentity/configuring-pingfederate-external-idp)
+  - **Identity Management**
+    - [SCIM API Examples](/zidentity/scim-api-examples)
+  - **OneAPI Authentication**
+    - [Understanding OneAPI Authentication](/zidentity/understanding-oneapi-authentication)
+    - [About API Clients](/zidentity/about-api-clients)
+    - [Adding an API Client](/zidentity/adding-api-client)
+    - [Editing or Deleting an API Client](/zidentity/editing-or-deleting-api-client)
+    - [Viewing API Resources](/zidentity/viewing-api-resources)
+    - [About Access Tokens](/zidentity/about-access-tokens)
+    - [Revoking Access Tokens](/zidentity/revoking-access-tokens)
+    - [About the API Client Access Policy](/zidentity/about-api-client-access-policy)
+    - [Adding API Client Access Policy Rule](/zidentity/adding-api-client-access-policy-rule)
+  - **Token Validators**
+    - [About Token Validators](/zidentity/about-token-validators)
+    - [Adding a Token Validator](/zidentity/adding-token-validator)
+    - [Testing an Access Token](/zidentity/testing-access-token)
+- **Policies**
+  - [About Sign-On Policies](/zidentity/about-sign-on-policies)
+  - [Configuring Admin Sign-On Policy](/zidentity/configuring-sign-on-policy)
+  - [Configuring the Password Policy](/zidentity/configuring-password-policy)
+- **Audit Logs**
+  - [About Audit Logs](/zidentity/about-audit-logs)
+- **ZIdentity API**
+  - [Understanding ZIdentity APIs](/zidentity/understanding-zidentity-apis)
+  - **API Developer & Reference Guide**
+    - [API Response Codes and Error Messages](/zidentity/api-response-codes-and-error-messages)
+    - **Reference Guide**
+      - [API Clients](/zidentity/api-clients)
+      - [Groups](/zidentity/groups)
+      - [Resource Servers](/zidentity/resource-servers)
+      - [Users](/zidentity/users)
+- **Release Notes**
+  - [Release Upgrade Summary (2025)](/zidentity/release-upgrade-summary-2025)
+  - [Release Upgrade Summary (2024)](/zidentity/release-upgrade-summary-2024)
+  - [Release Upgrade Summary (2023)](/zidentity/release-upgrade-summary-2023)

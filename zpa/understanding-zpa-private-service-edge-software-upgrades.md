@@ -1,0 +1,30 @@
+# Understanding ZPA Private Service Edge Software Updates
+Source: https://help.zscaler.com/zpa/understanding-zpa-private-service-edge-software-upgrades
+PDF: https://help.zscaler.com/pdf/com/en/1484526.pdf
+
+[Watch a video about Private Service Edge Software Updates.](https://fast.wistia.net/embed/iframe/hog6z1ab2u)
+When creating ZPA Private Service Edge groups, you can specify a day and time where the ZPA Private Service Edge software is updated to the latest version. When a new software version is available, a ZPA Private Service Edge in the group is randomly chosen to update. While updating, the ZPA Private Service Edge restarts and becomes temporarily unavailable. Any new application access is redirected to the other ZPA Private Service Edges in the ZPA Private Service Edge group.
+The update occurs within a 4-hour window and starts at the specified time for the ZPA Private Service Edge group. After a ZPA Private Service Edge has successfully updated, another eligible ZPA Private Service Edge in the group is chosen and updated. This continues until the 4-hour window expires or all the ZPA Private Service Edges in the group have updated successfully. If a software update is unsuccessful, the update process is retried in every periodic software update until all ZPA Private Service Edges are updated.
+Starting with ZPA Private Service Edge version 24.650.4 and later, a version check and automated update is performed during an initial connection. To learn more, see [Zscaler Trust](https://trust.zscaler.com/private.zscaler.com/security-advisories).
+If the ZPA Private Service Edges for your internal applications are using software that is not functioning as expected, Zscaler Support might update software for these ZPA Private Service Edges prior to the next periodic software update. Zscaler Support informs your organization's ZPA administrators in advance if there is a need for an immediate software update.
+To learn more, see [Scheduling Periodic Software Updates for a ZPA Private Service Edge Group](/zpa/scheduling-periodic-software-updates-zpa-service-edge-group) and [Manually Updating ZPA Private Service Edge Software](/zpa/manually-updating-zpa-service-edge-software). For information on locally updating operating system software or software packages via a deployed ZPA Private Service Edge console, see [Managing Deployed ZPA Private Service Edges](/zpa/managing-deployed-zpa-private-service-edges).
+About the ZPA Private Service Edge Update Status
+On the Private Service Edges page, you can see the update status of each ZPA Private Service Edge in the **Upgrade Status** column. There are 6 types of statuses:
+- [Not Scheduled](#notscheduled)
+- [Scheduled](#schedule)
+- [Success](#success)
+- [Failure](#failure)
+- [Partial Failure](#partialFailure)
+- [Restarting](#restart)
+About ZPA Private Service Edge Host Operating System Management
+ZPA Private Service Edges are licensed so that Zscaler can periodically update their software. However, updates to the host OS is the organization's responsibility, not Zscaler's. The ZPA Private Service Edge software is designed to be compatible with updates to the host OS. Zscaler recommends updating the host OS whenever you determine it is necessary. To learn more, see [Managing Deployed ZPA Private Service Edges](/zpa/managing-deployed-zpa-private-service-edges) and [Operating System Security](/zpa/zpa-service-edge-deployment-prerequisites#Firewall).
+[]After a ZPA Private Service Edge is created, its initial Upgrade Status displays **Not Scheduled**.
+[]If a ZPA Private Service Edge is scheduled to update to the latest version, its Upgrade Status displays **Scheduled**. When you hover over the **Scheduled **status, it displays the following information:
+- **Scheduled Version**: Displays the scheduled software version that the ZPA Private Service Edge updates to.
+- **Upgrade Window**: Displays the 4-hour window during which the ZPA Private Service Edge updates.
+When the ZPA Private Service Edge is scheduled for an update, you can't change the periodic software update time for that particular ZPA Private Service Edge.
+If a ZPA Private Service Edge is scheduled for an update, you can also manually update the ZPA Private Service Edge before the scheduled time. To learn more, see [Manually Updating ZPA Private Service Edge Software](/zpa/manually-updating-zpa-service-edge-software).
+[]If a ZPA Private Service Edge successfully updates to the latest version, its Upgrade Status displays **Success**. When you hover over the **Success **status, it displays the **Scheduled Version**, which is the scheduled software version that the ZPA Private Service Edge updated to.
+[]If a ZPA Private Service Edge fails to update to the latest version, its Upgrade Status displays **Failure**. When you hover over the **Failure **status, it displays the **Scheduled Version**, which is the scheduled software version that the ZPA Private Service Edge failed to update to. Zscaler recommends that you restart the ZPA Private Service Edge virtual machine (VM) to recover it from the failure state. If a software update is unsuccessful, the update process is retried in every periodic software update until all ZPA Private Service Edges are updated.
+[]If a supporting file fails to update, the ZPA Private Service Edge's Upgrade Status displays **Partial Failure**. When you hover over the **Information **icon next to the supporting file, it displays the **Scheduled Version**, which is the scheduled supporting file version that the ZPA Private Service Edge failed to update. Zscaler recommends [troubleshooting](/zpa/troubleshooting-zpa-private-service-edges#partialFailure) to figure out why the supporting file failed to update.
+[]After the ZPA Private Service Edge downloads the new software version, it needs to restart to complete the update. Its Upgrade Status is **Restarting**.

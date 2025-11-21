@@ -1,0 +1,87 @@
+# Authentication Error Codes
+Source: https://help.zscaler.com/unified/authentication-error-codes
+PDF: https://help.zscaler.com/pdf/com/en/1491651.pdf
+
+The article documents various errors displayed by the Zscaler service due to authentication failure.
+- [Generic Authentication Error Codes](#generic)
+- [Identity Proxy Error Codes](#idp)
+[]The following table lists the error codes that the Zscaler service displays when user authentication fails:
+| Error Code | Description | What to Do |
+| ---------- | ----------- | ---------- |
+| 211000 | This error occurs when gateway redirected traffic is forwarded from a location where authentication is disabled. | Check if you have different routing for the gateway redirected traffic and the actual traffic. |
+| 421000 | This error occurs when the organization's information extracted from the user cookie does not match the organization's DPPC port used for forwarding traffic. | Clear the cookies and try again. If the error persists, export logs and contact Zscaler Support. |
+[]
+[Identity Proxy](/unified/about-identity-proxy-settings) error codes are displayed when the service provider (i.e., cloud app) authentication requests fail. The following table lists the Identity Proxy error codes and troubleshooting tips:
+| Error Code | Description | What to Do |
+| ---------- | ----------- | ---------- |
+| 0x1388 | The organization wasn't found. | The organization is invalid or might have been deleted. |
+| 0x1389 | Identity Proxy is disabled for the cloud app. | Enable Zscaler as the IdP proxy for the cloud app. |
+| 0x138A | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x138B | An invalid SAML request was received. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x138C | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x138D | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x138E | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x138F | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1390 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1391 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1392 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1393 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1394 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1395 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1396 | No ID was found in the SAML request. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1398 | An invalid user, cookie, or session. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x1399 | An invalid user, cookie, or session. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139A | An invalid user, cookie, or session. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139B | The timestamp in the SAML request is invalid. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139C | The version in the SAML request is invalid. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139D | The SAML request is outdated. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139E | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x139F | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A0 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A1 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A3 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A4 | The cloud app in the SAML request isn't supported. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A5 | The SAML request came from an unknown Public Service Edge. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13A6 | The SAML endpoint is invalid. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x &lt;!--td {border: 1px solid #ccc;}br {mso-data-placement:same-cell;}--&gt;
+13A9 | No SAML request was found in the payload. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AA | No SAML request was found in the payload. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AB | The SAML request failed to decode. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AC | The SAML request failed to decode. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AD | The SAML request path is too long. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AE | The SAML request was sent to the wrong cloud. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13AF | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13B0 | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13B1 | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13B2 | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13B3 | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13B4 | The domain in the SAML request is invalid. The Zscaler service was unable to perform user transformation. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13B5 | The domain in the SAML request is invalid. The Zscaler service was unable to perform user transformation. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13B6 | An internal error occurred. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13B7 | The cloud app is disabled. | Enable the cloud app for your organization. |
+| 0x13B8 | The cloud app configuration was modified during the authentication process. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13B9 | An internal error occurred. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13BA | An internal error occurred. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13BC | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13BD | The SAML request took too long to complete. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13BE | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13BF | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C0 | A transient cloud issue. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C1 | The user is stored in the Zscaler Hosted User Database and entered the wrong password. | Check if the user is entering the correct password. |
+| 0x13C2 | The user is synchronized with Zscaler Authentication Bridge (ZAB). The Zscaler service was unable to connect to the ZAB. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C3 | The user is synchronized with Zscaler Authentication Bridge (ZAB). The Zscaler service was unable to connect to the ZAB. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C4 | The user is synchronized with Zscaler Authentication Bridge (ZAB) and entered the wrong password. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C5 | An internal error occurred. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C6 | The user might be authenticated with another organization that doesn't have an identity proxy configured. | The user must log out from their existing Zscaler account and log in using the account with the identity proxy configured. |
+| 0x13C7 | There is no key to sign the SAML response. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C8 | Wrong binding method. The Zscaler service didn't receive a POST request. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13C9 | The organization was deleted during the authentication process. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13CA | The IdP is disabled during the authentication process. | Enable the IdP for your organization. |
+| 0x13CB | An invalid cookie. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13CC | The cloud app configuration was disabled or deleted during the authentication process. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13CD | The cloud app configuration was disabled or deleted during the authentication process. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13CE | The SAML request is outdated. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13CF | The SAML request is outdated. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13D0 | The user wasn't found. | The user might have been deleted. Re-add the user. |
+| 0x13D1 | The SAML request is outdated. | Retry after a few seconds. If the error persists, contact Zscaler Support. |
+| 0x13D2 | An internal error occurred. | Retry after a few seconds. If the error persists, contact Zscaler Support. |

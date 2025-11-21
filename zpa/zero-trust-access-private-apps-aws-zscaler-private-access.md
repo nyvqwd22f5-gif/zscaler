@@ -1,0 +1,8 @@
+# Zero Trust Access to Private Apps in AWS with Zscaler Private Access
+Source: https://help.zscaler.com/zpa/zero-trust-access-private-apps-aws-zscaler-private-access
+PDF: https://help.zscaler.com/pdf/com/en/1485076.pdf
+
+The Zscaler Reference Architecture series delivers best practices based on real-world deployments. The recommendations in this series were developed by Zscaler's transformation experts from across the company. This guide will steer you through the architecture process and provide technical deep dives into specific platform functionality and integrations. The Zscaler Reference Architecture series is designed to be modular, so this guide will show you how to configure a different aspect of the platform in order to allow you meet your specific policy goals.
+Zscaler Private Access (ZPA) is a part of the Zscaler Zero Trust Exchange platform. ZPA provides secure access, based on a zero-trust framework, to private applications—including remote access to internal applications running on Amazon Web Services (AWS). With ZPA, applications are never exposed to the internet, making them completely invisible to unauthorized users.
+[Download English PDF](/downloads/zpa/reference-architecture/zero-trust-access-private-apps-aws-zscaler-private-access/zero-trust-access-private-apps-aws-zpa.pdf)
+[Download Japanese PDF](/downloads/zpa/reference-architecture/zero-trust-access-private-apps-aws-zscaler-private-access/zscaler-architecture-guide-ZPA-R9-15dec21_ja-JP.pdf)

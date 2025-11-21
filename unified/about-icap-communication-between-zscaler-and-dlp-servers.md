@@ -1,0 +1,18 @@
+# About ICAP Communication Between Zscaler and DLP Servers
+Source: https://help.zscaler.com/zia/about-icap-communication-between-zscaler-and-dlp-servers
+PDF: https://help.zscaler.com/pdf/com/en/1400106.pdf
+
+When you configure DLP policy rules in the ZIA Admin Portal, you can specify whether you want the Zscaler service to send information about policy violations via ICAP to your organization's on-premises or cloud-based DLP server. Your organization can then use the information sent to follow standard data loss prevention or remediation workflows.
+When the Zscaler service sends information to your DLP server, it does not do so from a ZIA Public Service Edge on the cloud that initially inspects your users' transaction. If a ZIA Public Service Edge finds that a transaction violates a DLP policy rule and further, the rule specifies that the service send violation information to the organization's DLP server, that ZIA Public Service Edge forwards the transaction information to another ZIA Public Service Edge. The second ZIA Public Service Edge is on a different cloud that the service uses for sending communications to your DLP servers.
+The second ZIA Public Service Edge actually sends the following information about the transaction to your organization's DLP server:
+- Client IP and username via ICAP X-headers.
+- A copy of the HTTP POST request that contains the file that violated the DLP policy, or if the content is from HTTP Forms data, a copy of the content that violated the DLP policy. The host URL to which the user was attempting to send content would also be included here.
+You must configure your organization's firewall to allow communications from the second ZIA Public Service Edge. Further, to protect your organization's data, Zscaler recommends that you have the ZIA Public Service Edge send the above information in encrypted form via secure ICAP. However, because most DLP servers can only read unencrypted information, Zscaler recommends installing an open-source application called the stunnel application on your DLP server. After installation, the stunnel application and the ZIA Public Service Edge can establish an SSL communication, and the ZIA Public Service Edge can send transaction information in encrypted form to the DLP server. The stunnel application then decrypts the transaction information for the DLP server.
+The figure below illustrates the process that takes place when the Zscaler service sends information to your organization's DLP servers using secure ICAP. Once this process takes place, your DLP server can read the ICAP communications from the ZIA Public Service Edge and report incidents as applicable in your DLP product.
+![Diagram showing process when Zscaler service sends information to a user organization’s DLP server using secure ICAP](/downloads/zia/policies/data-loss-prevention/dlp-incident-receiver/about-icap-communication-between-zscaler-and-dlp-servers/ZIA-Diagram-DLP-Server-ICAP.png)
+Zscaler recommends that you use secure ICAP, however, you can use unencrypted ICAP if your organization requires it. The same process would apply, with the following exceptions:
+- The second ZIA Public Service Edge does not encrypt the transaction information it sends to your DLP server.
+- You do not need to install the stunnel application. The DLP server can accept the information from the ZIA Public Service Edge as is.
+Configuration requirements differ depending on whether you're using secure ICAP or unencrypted ICAP. Select the appropriate configuration option for your organization.
+- [Configuration for Enabling Secure ICAP](/zia/how-do-i-configure-secure-icap)
+- [Configuration for Enabling Unencrypted ICAP](/zia/how-do-i-configure-unencrypted-icap)

@@ -1,0 +1,11 @@
+# Using Network Decoy Personalities and Services
+Source: https://help.zscaler.com/deception/using-network-decoy-personalities-and-services
+PDF: https://help.zscaler.com/pdf/com/en/1531276.pdf
+
+Zscaler Deception provides a set of ready-to-use templates to create network decoys (Internal or Zero Trust Network). These templates are known as personalities and are built based on different types of servers, applications, etc. You can use these personalities when configuring [network decoys manually](/deception/about-network-decoys), or deploying [deception strategy](/deception/about-deploy-strategy) to create decoys. Zscaler Deception provides a list of preconfigured network decoy personalities for various business use cases. You can also create custom personalities based on your business requirements. To learn more, see [About Network Decoy Personalities](/deception/about-network-decoy-personalities).
+When you select a personality while creating a network decoy, the configurations, such as hostname or FQDN and MAC address, are automatically configured along with the default services that are tagged to the personality.
+[See image.](#deception-network-decoy-config-personality-3)
+By default, services are enabled based on the network decoy personality that you select when creating a network decoy. The services can be tailored to specific environments and use cases. You can enable or disable services or change the content they serve per your requirements. To learn more, see [Configuring Services for a Network Decoy.](/deception/configuring-services-network-decoy)
+[See image.](#deception-network-decoy-services-personalities)
+[]![Configure network personality in network decoys](/downloads/deception/deceive/network-decoys/using-network-decoy-personalities-and-services/zscaler-deception-network-decoys-personality-4.png)
+[]![Configure services for network decoys](/downloads/deception/deceive/network-decoys/using-network-decoy-personalities-and-services/zscaler-deception-network-decoys-service-details.png)

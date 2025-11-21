@@ -1,0 +1,10 @@
+# Zscaler SDK For Mobile Apps Logs
+Source: https://help.zscaler.com/logs-fair-use/zscaler-sdk-mobile-apps-logs
+PDF: https://help.zscaler.com/pdf/com/en/1529549.pdf
+
+In order to access the Zscaler SDK for Mobile Apps (ZSDK) service, Zscaler has the right to process, use, reproduce, store, modify, and display the information from logs. For ZSDK, *logs* are defined as follows:
+- User Logs: Activity logs of authorized users who access your mobile application through ZSDK. These logs capture end user requests to applications, endpoint device metadata, or information related to an end user's availability and connection to Zscaler. To learn more, see [User Activity Log Fields](/zpa/user-activity-log-fields) and [User Status Log Fields](/zpa/user-status-log-fields).
+- App Connector Logs: Activity logs of the App Connector. App Connectors allow authorized users access to your mobile application through ZSDK. These logs capture information on an App Connector's availability and connection to Zscaler. To learn more, see [App Connector Status Log Fields](/zpa/connector-status-log-fields).
+- Audit Logs: Activity logs of configuration changes you made via the ZSDK Admin Portal. To learn more, see [About Audit Logs](/zpa/about-audit-logs) and [Audit Log Fields](/zpa/about-audit-log-fields).
+Logs do not include your internal system logs.
+Zscaler retains User Logs and App Connector Logs for a rolling period of at least 14 days during the subscription term. Zscaler retains Audit Logs for a rolling period of six months during the subscription term. When the subscription term ends or expires, the logs are deleted by Zscaler according to the applicable retention cycles. You can also view your logs or stream logs in real-time using the [Log Streaming Service (LSS)](/zpa/about-log-streaming-service).

@@ -1,0 +1,548 @@
+# Firewall Data Types and Filters
+Source: https://help.zscaler.com/zia/firewall-data-types-and-filters
+PDF: https://help.zscaler.com/pdf/com/en/1399501.pdf
+
+There are two ways you work with Firewall data types and filters to define Firewall traffic information that you want to view: in a dashboard or report [widget](/zia/what-widget), or when analyzing charts on an Insights page. To learn more about how to analyze your Insights traffic, see [Analyzing Traffic Using Insights](/zia/analyzing-traffic-using-insights).
+When you add or edit a widget in a [dashboard](/zia/about-dashboards) or [report](/zia/about-interactive-reports) and select Firewall in the Widget Settings dialog, you can select a data type to view from the Data Type menu and apply filters that you choose from the Add Filter menu.
+[See image.](#seeimage1)
+In the Analytics >** **Firewall Insights page, you select a data type to view from the menu above the chart and apply filters that you choose from the Add Filter menu on the left pane.
+[See image.](#seeimage2)
+Data Types and Filters
+Certain filters, like** **Users, Departments, Locations, and others, support the selection of multiple values. For these, you can select up to 200 values in a single filter. You can also choose to include or exclude the selected values.
+There are certain filter combinations that don't appear together in Insights, but appear together in Insights Logs. For example, the Department and Location filters don't appear together in Insights, but appear together in Insights Logs when applied.
+Certain data types only appear on the Firewall Insights page and not on the Dashboard > New Widget window. The following are the firewall data types and their associated filters that appear on both the pages:
+- [Action](#action)
+- [Application Segment](#app-segment)
+- [Department](#department)
+- [IPS Department](#ips-department)
+- [IPS Location](#ips-loc)
+- [IPS Location Groups](#IPS-location-group)
+- [IPS Rule Name](#ips-rule)
+- [IPS Threat Category](#ips-threat-cat)
+- [IPS User](#ips-user)
+- [Location](#location)
+- [Location Group](#location-group)
+- [Location Type](#location-type)
+- [Network Application](#network-application)
+- [Network Service](#network-service)
+- [Overall Traffic](#overall-traffic)
+- [Rule Name](#rule-name)
+- [User](#user)
+The following are the firewall data types that only appear on the Firewall Insights page:
+- [Client Source IP](#client-source-IP)
+- [Client Tunnel IP](#CTIP)
+- [Server Destination IP](#SDIP)
+- [Threat Name](#TN)
+[]Displays data about the action that the service took on your organization's traffic. You can view either the number of sessions or bytes. You can apply the following filters:
+- **Action:** Use this filter to view data about traffic that the service either allowed or blocked.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Rule name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data about traffic associated with each application segment. You can apply the following filters:
+- **Action:** Use this filter to view data about traffic that the service either allowed or blocked.
+- **Application Segment**: Use this filter to view data about traffic for a specific application segment.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to view data about traffic for a specific location type. You can search for a specific location type.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data on the traffic associated with a specific client source IP address. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific client destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with the Advanced Firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific client destination port.
+- **Client Source IP**: Use this filter to limit the data to traffic associated with a specific client source IP address.
+- **Client Source Port**: Use this filter to limit the data to traffic associated with a specific client source port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific client tunnel IP address.
+- **Client Tunnel Port:** Use this filter to limit the data to traffic associated with a specific client tunnel port.
+- **Country:** Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with the Advanced Firewall subscription)
+- **DNAT Rule Name**: Use this filter to limit the data to traffic associated with a specific [NAT Control](/zia/about-nat-control) rule. Choose the rules from the list.
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific cate
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with the URL category corresponding to the server IP address.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data on the traffic associated with a specific client tunnel IP address. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific client destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with the Advanced Firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Source IP**: Use this filter to limit the data to traffic associated with a specific client source IP address.
+- **Client Source Port**: Use this filter to limit the data to traffic associated with a specific client source port.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific client destination port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific client tunnel IP address.
+- **Country:** Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with the Advanced Firewall subscription)
+- **DNAT Rule Name**
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific cate
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with the URL category corresponding to the server IP address.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name Search**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data about the web traffic of each department in your organization. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific client destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with advanced firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific client destination port.
+- **Client Destination Source IP**: Use this filter to limit the data to traffic associated with a specific client destination source IP.
+- **Client Destination Source Port**: Use this filter to limit the data to traffic associated with a specific client destination source port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific client tunnel IP address.
+- **Client Tunnel Port:** Use this filter to limit the data to traffic associated with a specific client tunnel port.
+- **Country**: Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with advanced firewall subscription)
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific cate
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Secure Browsing Class**: Use this filter to limit the data to traffic associated with a secure browsing class.
+- **Secure Browsing Status**: Use this filter to limit the data to traffic associated with a secure browsing status.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with a specific URL category. You can search for a specific category.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+- **Zscaler Client Connector Tunnel Version: **Use this filter to view transactions associated with a specific Zscaler Client Connector tunnel version, listed under this filter.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data about departments impacted by IPS policy. You can apply the following filters:
+- **Action**: Use this filter to limit the data to traffic that was either allowed or blocked.
+- **IPS Department**: Use this filter to limit the data to traffic that was impacted by IPS policy. You can search for a specific department.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **IPS Threat Category**: Use this filter to limit the data to a specific threat category. You can search for a specific category.
+- **IPS User**: Use this filter to limit the data to specific users impacted by IPS policy. You can search for a specific user.
+[]Displays data about locations with IPS enabled. You can apply the following filters:
+- **Action**: Use this filter to view data about traffic that the service either allowed or blocked.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **IPS Threat Category**: Use this filter to limit the data to a specific threat category. You can search for a specific category.
+- **IPS Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location.
+- **IPS Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **IPS User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+[]Displays data about locations groups impacted by IPS policy. You can apply the following filters:
+- **Action**: Use this filter to view data about traffic that the service either allowed or blocked.
+- **IPS Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location.
+- **IPS Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **IPS Threat Category**: Use this filter to limit the data to a specific threat category. You can search for a specific category.
+- **IPS User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+[]Displays data about your IPS rules. You can apply the following filters:
+- **Action**: Use this filter to view data about traffic that the service either allowed or blocked.
+- **IPS Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **IPS Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location.
+- **IPS Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **IPS User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+[]Displays data about users impacted by IPS policy. You can apply the following filters:
+- **Action**: Use this filter to view data about traffic that the service either allowed or blocked.
+- **IPS Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **IPS Threat Category**: Use this filter to limit the data to a specific threat category. You can search for a specific category.
+- **IPS Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location.
+- **IPS Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **IPS User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+[]Displays data about IPS threat categories. You can apply the following filters:
+- **Action**: Use this filter to view data about traffic that the service either allowed or blocked.
+- **IPS Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department.
+- **IPS Threat Category**: Use this filter to limit the data to a specific threat category. You can search for a specific category.
+- **IPS Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location.
+- **IPS Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **IPS User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+[]Displays data about a location's traffic. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with advanced firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific destination port.
+- **Client Source IP**: Use this filter to limit data to traffic associated with a specific client source IP.
+- **Client Source Port**: Use this filter to limit data to traffic associated with a specific client source port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific tunnel IP address.
+- **Client Tunnel Port:** Use this filter to limit the data to traffic associated with a specific tunnel port.
+- **Country**: Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with advanced firewall subscription)
+- **DNAT Rule Name**
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Secure Browsing Class**: Use this filter to limit the data to traffic associated with a specific browsing class.
+- **Secure Browsing Status**: Use this filter to limit the data to traffic associated with a specific browsing status.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with a specific URL category. You can search for a specific category.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+- **Zscaler Client Connector Tunnel Version: **Use this filter to view transactions associated with a specific Zscaler Client Connector tunnel version, listed under this filter.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data on the traffic associated with a specific location group. You can apply the following filters:
+- **Action**: Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Application**: Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **Network Service**: Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Rule Name**: Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data on the traffic associated with a specific location type. You can apply the following filters:
+- **Action**: Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Location**: Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Application**: Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **Network Service**: Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Rule Name**: Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **User**: Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data about traffic associated with a specific network application.
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data about traffic associated with a specific network service.
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Service:** Use this filter to limit the data to specific services. Choose the services from the list.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data about the overall traffic for the selected time period. You can apply the following filters:
+- **Action:** Use this filter to view data about traffic that the service either allowed or blocked.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Rule name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+[]Displays data about traffic associated with specific rules in the firewall policy. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **Location Type**: Use this filter to limit the data to a specific location type. The default option for this filter is **None**. The following location types appear under this filter:
+- Corporate User Traffic Group
+- Guest Wifi Group
+- IoT Traffic Group
+- Server Traffic Group
+- Unassigned Locations
+- Workload Traffic Group
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. Choose the rules from the list
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain locations.
+[]Displays data about traffic associated with specific server destination IP addresses. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific client destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with the Advanced Firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Source IP**: Use this filter to limit the data to traffic associated with a specific client source IP address.
+- **Client Source Port**: Use this filter to limit the data to traffic associated with a specific client source port.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific client destination port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific client tunnel IP address.
+- **Country:** Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with the Advanced Firewall subscription)
+- **DNAT Rule Name**
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific cate
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with the URL category corresponding to the server IP address.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name Search**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data about traffic associated with specific threat names. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific client destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with the Advanced Firewall subscription). Enter all or part of the name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Client Source IP**: Use this filter to limit the data to traffic associated with a specific client source IP address.
+- **Client Source Port**: Use this filter to limit the data to traffic associated with a specific client source port.
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific client destination port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific client tunnel IP address.
+- **Country:** Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with the Advanced Firewall subscription)
+- **DNAT Rule Name**
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific cate
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with the URL category corresponding to the server IP address.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name Search**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user. You can choose to include or exclude certain users.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]Displays data about traffic associated with a specific user. You can apply the following filters:
+- **Action:** Use this filter to limit the data to traffic that was either allowed or blocked.
+- **Application Segment**: Use this filter to view transactions associated with a specific [application segment](/zpa/about-applications).
+- **Client Destination IP:** Use this filter to limit the data to traffic associated with a specific destination IP address.
+- **Client Destination Name: **Use this filter to limit the data to traffic associated with a specific destination FQDN. (Available with advanced firewall subscription)
+- **Client Destination Port:** Use this filter to limit the data to traffic associated with a specific destination port.
+- **Client Source IP**: Use this filter to limit data to traffic associated with a specific client source IP.
+- **Client Source Port**: Use this filter to limit data to traffic associated with a specific client source port.
+- **Client Tunnel IP:** Use this filter to limit the data to traffic associated with a specific tunnel IP address.
+- **Client Tunnel Port:** Use this filter to limit the data to traffic associated with a specific tunnel port.
+- **Country**: Use this filter to limit the data to traffic associated with a specific country. You can search for a specific country.
+- **Department:** Use this filter to limit the data to the traffic of a specific department. It lists 200 results at a time. You can search for a specific department. You can choose to include or exclude certain departments.
+- **Device Hostname**: Use this filter to limit the data to the hostname of the device.
+- **Device Model**: Use this filter to limit the data to the model of the device.
+- **Device Name**: Use this filter to limit the data to the name of the device.
+- **Device OS Version**: Use this filter to limit the data to the OS version the device uses.
+- **Device Owner**: Use this filter to limit the data to the owner of the device.
+- **DNAT Destination Name: **Use this filter to limit the data to traffic associated with a specific NAT destination FQDN. (Available with advanced firewall subscription)
+- **DNAT Rule Name**
+- **Enrolled Device appversion**: Use this filter to limit the data to the app version of the enrolled device.
+- **Forwarding Method**: Use this filter to limit the data to the type of forwarding method used.
+- **Forwarding Rule**: Use this filter to limit the data to the type of forwarding rule used.
+- **Gateway Destination IP**: Use this filter to limit the data to the gateway destination IP.
+- **Gateway Destination Port**: Use this filter to limit the data to the gateway destination port.
+- **Gateway Name**: Use this filter to limit the data to the gateway name.
+- **Inbound Bytes:** Use this filter to limit the data to packets sent from the server to the client that were within a specific size range. Choose a predefined range or specify a custom range.
+- **IPS Rule Name**: Use this filter to limit the data to specific IPS rules. You can search for a specific rule.
+- **Location:** Use this filter to limit the data to a location's traffic. Choose a location from the list of internet gateway locations specified in the Locations page. The list includes **Road Warrior**, the default location for transactions that did not originate from a predefined location. This filter lists 200 results at a time. You can search for a specific location. You can choose to include or exclude certain locations.
+- **Location Group**: Use this filter to limit the data to the traffic of a specific location group. You can search for a specific location group.
+- **NAT Action:** Use this filter to limit the data to specific NAT actions that were performed on the session.
+- **Network Application:** Use this filter to limit the data to specific applications. You can search for a specific application.
+- **Network Application Category**: Use this filter to limit the data to traffic associated with a specific application category. You can search for a specific category.
+- **Network Service:** Use this filter to limit the data to specific network services. You can search for a specific network service.
+- **Outbound Bytes:** Use this filter to limit the data to packets that were received by the server within a specific size range. Choose a predefined range or specify a custom range.
+- **Rule Name:** Use this filter to limit the data to specific rules in the firewall policy. You can search for a specific rule.
+- **Secure Browsing Class**: Use this filter to limit the data to traffic associated with a specific browsing class.
+- **Secure Browsing Status**: Use this filter to limit the data to traffic associated with a specific browsing status.
+- **Server Destination IP:** Use this filter to limit the data to traffic associated with a specific server destination IP address.
+- **Server Destination Port**: Use this filter to limit the data to traffic associated with a specific server destination IP port.
+- **Server IP Category:** Use this filter to limit the data to traffic associated with a specific URL category. You can search for a specific category.
+- **Server Source IP:** Use this filter to limit the data to traffic associated with a specific server source IP address.
+- **Server Source Port:** Use this filter to limit the data to traffic associated with a specific server source port.
+- **Session Duration:** Use this filter to limit the data to traffic based on the session time.
+- **Show Delayed Logs**: Use this filter to limit the data to traffic associated with delayed logs.
+- **Threat Category**: Use this filter to view transactions associated with a specific threat category. These threats are detected by **Malware Protection**.
+- **Threat Name**: Use this filter to enter all or part of the threat name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Not Null**, or **Is Null**.
+- **Traffic Forwarding:** Use this filter to limit the data to traffic associated with a specific traffic forwarding mechanism.
+- **User:** Use this filter to limit the data to the traffic of specific users. You can search for a specific user.
+If applicable, enable **Exclude Location** to limit the data to only users. By default, user-related widgets include locations and users. You can choose to include or exclude certain users.
+- **Zscaler Client Connector Tunnel Version: **Use this filter to view transactions associated with a specific Zscaler Client Connector tunnel version, listed under this filter.
+- **ZIA Gateway Protocol**: Use this filter to limit the data to traffic associated with the gateway protocol.
+- **ZIA Source IP**: Use this filter to limit the data to traffic associated with the source IP
+- **ZIA Source Port**: Use this filter to limit the data to traffic associated with the source port.
+[]![Screenshot of Data Type and Filters menus for Zscaler New Widget window](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/dashboard-and-reporting-tools/firewall-data-types-and-filters/zia-fw-widget-data_type-filters.png)
+[]![Screenshot of Data Type and Filters menus for Zscaler Firewall Insights](/downloads/zia/documentation-knowledgebase/analytics/dashboards-reports-and-logs/dashboards-and-reports-tools/firewall-data-types-and-filters/zia-firewall-data-types-filters.png)

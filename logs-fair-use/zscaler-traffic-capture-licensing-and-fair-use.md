@@ -1,0 +1,7 @@
+# Zscaler Traffic Capture Licensing and Fair Use
+Source: https://help.zscaler.com/logs-fair-use/zscaler-traffic-capture-licensing-and-fair-use
+PDF: https://help.zscaler.com/pdf/com/en/1463511.pdf
+
+Zscaler Traffic Capture is a Software as a Service (SaaS) product that is licensed by the number of seats and amount of data captured. The number of seats purchased for the subscription term is stated in an order. A *seat* is a subscription license for the Traffic Capture service for an individual authorized user. The amount of data captured is measured in aggregate on a monthly basis based on the number of seats and allocated amount of data captured per seat. The number of seats required is determined by counting the total number of unique individual users of Zscaler Traffic Capture over the previous rolling 90-day period.
+Ensure that you order the correct number of seats and additional data usage as needed. If additional seats or data usage is needed during a subscription term, refer to Zscaler Sales or your Channel Partner. Zscaler monitors and periodically reviews the number of seats and their data usage to ensure license compliance.
+The usage of Zscaler Traffic Capture is expected to be in accordance with the [Acceptable Use Policy](/legal/acceptable-use-policy).

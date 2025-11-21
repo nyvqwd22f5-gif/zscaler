@@ -1,0 +1,20 @@
+# Configuring Zscaler Client Connector for Microsoft 365 Cloud PCs
+Source: https://help.zscaler.com/zscaler-client-connector/configuring-zscaler-client-connector-microsoft-365-cloud-pcs
+PDF: https://help.zscaler.com/pdf/com/en/1503916.pdf
+
+Microsoft Windows 365 is a cloud-delivered, desktop-as-a-service (DaaS) solution that provides a virtualized Windows desktop, also referred to as a Cloud PC, that is accessible from any device without needing to manage the underlying infrastructure to support it. These Cloud PCs sit within a Microsoft-managed subscription. You can choose between a self-managed, underlying network infrastructure or a Microsoft-hosted network.
+This article describes how to use Zscaler Client Connector on Microsoft Windows 365.
+- Deploy a Windows 365 provisioning policy. Refer to [Windows 365 networking deployment options](https://learn.microsoft.com/en-us/windows-365/enterprise/deployment-options).
+- Install Zscaler Client Connector. There are two ways to deploy Zscaler Client Connector to a Windows 365 Cloud PC:
+- Use a [custom image](https://learn.microsoft.com/en-us/windows-365/enterprise/add-device-images). Install Zscaler Client Connector onto the image before provisioning a Cloud PC.
+- Use [Intune to deploy the application](https://learn.microsoft.com/en-us/windows-365/enterprise/app-overview) to the Cloud PC after it’s been provisioned. You can do this with either a custom image or a gallery image, and is Microsoft’s recommended approach to app deployment in Windows 365.
+- Configure Zscaler Client Connector for Windows 365. The RDP traffic used to connect to a Cloud PC should be bypassed from Zscaler Client Connector and given a direct path. To do this, add the following IP addresses in the **VPN Gateway Bypass** field in [App Profiles](/zscaler-client-connector/configuring-zscaler-client-connector-app-profiles):
+- `168.63.129.16`, which is used for Cloud PC health monitoring.
+- `169.254.169.254`, which is used by the Azure Instance Metadata Service (IMDS) endpoint.
+- All IP addresses with the WindowsVirtualDesktop service tag from Public Azure. Refer to the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=56519) to obtain these IP addresses from the JSON file. These gateway addresses are subject to change about once a month.
+These IPs represent the core RDP connectivity traffic for the service. Microsoft is working to reduce these IP subnets.
+If the connecting client is using Zscaler Client Connector to optimize RDP traffic, Zscaler and Microsoft recommend configuring the bypasses mentioned earlier on both Cloud PCs running Zscaler Client Connector and the connecting client.
+If IP address bypasses are not added, the following scenario can occur when a user is connected to the Cloud PC using RDP: After a user logs in to Zscaler Client Connector, the user experiences a freeze on the RDP session because the connection drops and is re-established. This happens every time the user logs in or logs out, turns Zscaler Internet Access (ZIA) off or on, or restarts the ZIA service in Zscaler Client Connector. However, after the session is re-established, users can use the Cloud PC without issues because as soon as the tunnel is established, all inbound traffic starts flowing through the tunnel, transferring the RDP traffic to it.
+- When installing Zscaler Client Connector in strict enforcement mode, use the app policy that has the bypasses mentioned earlier in the `POLICYTOKEN` tag to prevent users from losing access to the Cloud PC. After access is lost, the only way to regain access is to restore to a previous snapshot.
+-
+Refer to the [Microsoft Windows PowerShell script](https://github.com/microsoft/Windows365-PSScripts/tree/main/Windows%20365%20Gateway%20IP%20Lookup), which retrieves these gateway IP addresses associated with the Windows 365 service and outputs the list in a CSV format.

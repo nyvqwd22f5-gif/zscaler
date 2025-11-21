@@ -1,0 +1,19 @@
+# Managing Workflow Automation Integration with Slack
+Source: https://help.zscaler.com/workflow-automation/managing-workflow-automation-integration-slack
+PDF: https://help.zscaler.com/pdf/com/en/1457291.pdf
+
+Workflow Automation can integrate with Slack, a sanctioned Software as a Service (SaaS) application for Zscaler. During the remediation process for a data protection incident in Workflow Automation, admins or the application can initiate different notifications (user, escalation, and digest) to remediate the incident. When Workflow Automation is integrated with the Slack application, these notifications can be delivered through Slack messages to the appropriate users or admins associated with the incident. To learn more, see [Managing Incidents](/workflow-automation/managing-incidents), [Viewing & Managing Incident Details](/workflow-automation/viewing-managing-incident-details), [Managing Notification Templates](/workflow-automation/managing-notification-templates), [Managing Incident and Digest Template Mappings](/zia/managing-incident-and-digest-template-mappings), [Managing Admin Assignments](/workflow-automation/managing-admin-assignments), and [Managing Account Settings](/workflow-automation/managing-account-settings).
+The workflow functionality can also use Slack messages instead of emails when notifications are initiated. When defining a workflow definition, you can select Slack messages for the different actions contained within it. To learn more, see [Understanding Workflows in Workflow Automation](/workflow-automation/understanding-workflows-workflow-automation).
+Integrating Workflow Automation with Slack
+Before you can integrate Workflow Automation with Slack, you must:
+- Configure the Data Loss Prevention (DLP) application integration for your organization using Amazon Web Services, Azure, or Google Cloud Platform. Ensure that you add a DLP application integration in Workflow Automation during this process. To learn more, see [Configuring the DLP Application Integration Using Amazon Web Services](/zia/configuring-dlp-application-integration-using-amazon-web-services), [Configuring the DLP Application Integration Using Azure](/workflow-automation/configuring-dlp-application-integration-using-azure), and [Configuring the DLP Application Integration Using Google Cloud Platform](/workflow-automation/configuring-dlp-application-integration-using-google-cloud-platform).
+- Obtain and configure the Slack application for your organization.
+- Ensure that you define the different users for your organization who can use the Slack application.
+- Ensure that you have admin credentials for the Slack application. These credentials are required to integrate Workflow Automation with Slack.
+To learn more, refer to the [Slack help center](https://slack.com/help).
+To integrate Workflow Automation with Slack:
+- In the ZIA Admin Portal, go to **Administration** > **SaaS Application Tenants**.
+- Click **Add SaaS Application Tenant**. The **Add SaaS Application Tenant** page appears.
+- On the **Add SaaS Application Tenant** page, add the Slack application as a SaaS application tenant using the Slack admin credentials. When adding the tenant, ensure that you select the **Workflow Automation** checkbox under the **Onboard SaaS Application for** section. This process authorizes the Slack application with Zscaler Internet Access (ZIA) and integrates the Slack application with Workflow Automation. You can now select the Slack channel for the notifications initiated within Workflow Automation. To learn more, see [Adding SaaS Application Tenants](/zia/adding-saas-application-tenants).
+[See image.](#Add-SaaS-Application-Tenant-Slack)
+[]![Adding Slack as a SaaS Application Tenant in the Add SaaS Application Tenant Page in the ZIA Admin Portal](/downloads/zia/workflow-automation/getting-started/managing-workflow-automation-integration-slack/ZIA-WA-Add-SaaS-Application-Tenant-Page-Slack.png)

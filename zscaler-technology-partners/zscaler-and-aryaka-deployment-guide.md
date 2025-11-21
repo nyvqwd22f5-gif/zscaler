@@ -1,0 +1,8 @@
+# Zscaler and Aryaka Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-aryaka-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1390361.pdf
+
+The Zscaler and Aryaka Deployment Guide provides instructions on integrating Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) with the Aryaka platform.
+Aryaka’s Global SD-WAN enables enterprises with fast global connectivity along with accelerated access to business applications. Aryaka uses a global private network with built-in optimization and security capabilities that include a multi-layer security approach with a global private core network, fortified security on the Proofs of Possession (POPs), end-to-end encrypted tunnels, and tasteful firewalls. Zscaler adds a layer of advanced security controls needed for web and cloud-bound traffic, with an in-line proxy architecture, and inspecting traffic (including SSL) to provide identical protection for users wherever they connect, without impacting performance.
+Together, Aryaka and Zscaler deliver an SD-WAN and security platform for enterprises accessing mission-critical internally hosted applications as well as those going directly to the internet for accessing cloud applications. This deployment guide explains how to configure Aryaka SmartCONNECT to connect it to the Zscaler cloud using a GRE VPN tunnel.
+[Zscaler and Aryaka Deployment Guide](/downloads/zscaler-technology-partners/b/zscaler-and-aryaka-deployment-guide/Zscaler-Aryaka-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/b/zscaler-and-aryaka-deployment-guide/Zscaler-Aryaka-Deployment-Guide-FINAL.pdf)

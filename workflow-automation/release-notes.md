@@ -1,0 +1,126 @@
+# Workflow Automation Help
+Source: https://help.zscaler.com/workflow-automation/release-notes
+
+## Contents
+- **Data Protection**
+  - **Getting Started**
+    - [Step-by-Step Configuration Guide for Workflow Automation](/workflow-automation/step-step-configuration-guide-workflow-automation)
+    - **Admin Portal**
+      - [Accessing and Navigating the Workflow Automation Admin Portal](/workflow-automation/accessing-and-navigating-workflow-automation-admin-portal)
+      - [Viewing Alert Notifications](/workflow-automation/viewing-alert-notifications)
+      - [Managing Downloads](/workflow-automation/managing-downloads)
+      - [Managing Bulk Actions](/workflow-automation/managing-bulk-actions)
+      - [Using Tables in Workflow Automation](/workflow-automation/using-tables-workflow-automation)
+  - **Incident Group**
+    - [Managing Incident Groups](/workflow-automation/managing-incident-groups)
+    - [Managing Incident Group Mappings](/workflow-automation/managing-incident-group-mappings)
+  - **Setup**
+    - [Managing Admin Assignments](/workflow-automation/managing-admin-assignments)
+    - [Managing Approvers](/workflow-automation/managing-approvers)
+    - [Managing Roles and Permissions](/workflow-automation/managing-roles-and-permissions)
+    - [Managing Priorities](/workflow-automation/managing-priorities)
+    - [Managing Notification Templates](/workflow-automation/managing-notification-templates)
+    - [Adding Email Notification Templates](/workflow-automation/adding-email-notification-templates)
+    - [Adding Slack Notification Templates](/workflow-automation/adding-slack-notification-templates)
+    - [Adding Microsoft Teams Notification Templates](/workflow-automation/adding-microsoft-teams-notification-templates)
+    - [Managing Survey Templates](/workflow-automation/managing-survey-templates)
+    - [Managing Incident and Digest Template Mappings](/workflow-automation/managing-incident-and-digest-template-mappings)
+    - [Managing Account Settings](/workflow-automation/managing-account-settings)
+    - [Managing User Attributes](/workflow-automation/managing-user-attributes)
+    - [Managing Integration Users](/workflow-automation/managing-integration-users)
+    - [Managing Labels](/workflow-automation/managing-labels)
+    - [Managing Custom Email Domains](/workflow-automation/managing-custom-email-domains)
+    - [About Audit Logs](/workflow-automation/about-audit-logs)
+    - **Integrations**
+      - [Configuring the DLP Application Integration Using Amazon Web Services](/workflow-automation/configuring-dlp-application-integration-using-amazon-web-services)
+      - [Configuring the Amazon Web Services DLP Application Integration Using Zscaler Incident Receiver](/workflow-automation/configuring-amazon-web-services-dlp-application-integration-using-zscaler-incident-receiver)
+      - [Configuring the Amazon Web Services DLP Application Integration Using Cloud-to-Cloud Incident Forwarding](/workflow-automation/configuring-amazon-web-services-dlp-application-integration-using-cloud-cloud-incident-forwarding)
+      - [Configuring the DLP Application Integration Using Azure](/workflow-automation/configuring-dlp-application-integration-using-azure)
+      - [Configuring the Azure DLP Application Integration Using Zscaler Incident Receiver](/workflow-automation/configuring-azure-dlp-application-integration-using-zscaler-incident-receiver)
+      - [Configuring the Azure DLP Application Integration Using Cloud-to-Cloud Incident Forwarding](/workflow-automation/configuring-azure-dlp-application-integration-using-cloud-cloud-incident-forwarding)
+      - [Configuring the DLP Application Integration Using Google Cloud Platform](/workflow-automation/configuring-dlp-application-integration-using-google-cloud-platform)
+      - [Adding Integrations](/workflow-automation/adding-integrations)
+      - [Managing DLP Amazon Web Services Application Integrations in Workflow Automation](/workflow-automation/managing-dlp-aws-application-integrations-workflow-automation)
+      - [Managing DLP Azure Application Integrations in Workflow Automation](/workflow-automation/managing-dlp-azure-application-integrations-workflow-automation)
+      - [Managing DLP GCP Application Integrations in Workflow Automation](/workflow-automation/managing-dlp-gcp-application-integrations-workflow-automation)
+      - [Managing Workflow Automation Integration with Slack](/workflow-automation/managing-workflow-automation-integration-slack)
+      - [Managing Workflow Automation Integration with Microsoft Teams](/workflow-automation/managing-workflow-automation-integration-microsoft-teams)
+      - [Managing Workflow Automation Integration with ServiceNow](/workflow-automation/managing-workflow-automation-integration-servicenow)
+      - [Managing Workflow Automation Integration with Jira Software](/workflow-automation/managing-workflow-automation-integration-jira-software)
+  - **Workflows**
+    - [Understanding Workflows in Workflow Automation](/workflow-automation/understanding-workflows-workflow-automation)
+    - [Managing Workflow Templates](/workflow-automation/managing-workflow-templates)
+    - [Managing Workflows](/workflow-automation/managing-workflows)
+    - [Managing Workflow Mappings](/workflow-automation/managing-workflow-mappings)
+  - **Incidents**
+    - [Managing Incidents](/workflow-automation/managing-incidents)
+    - [Viewing & Managing Incident Details](/workflow-automation/viewing-managing-incident-details)
+    - [Understanding Duplicate Incidents in Workflow Automation](/workflow-automation/understanding-duplicate-incidents-workflow-automation)
+    - [Using Incident Filters in Workflow Automation](/workflow-automation/using-incident-filters-workflow-automation)
+    - [Responding to an End User Notification](/workflow-automation/responding-end-user-notification)
+    - [Responding to an Escalation Notification](/workflow-automation/responding-escalation-notification)
+    - [Responding to a User Digest Notification](/workflow-automation/responding-user-digest-notification)
+    - [Responding to a DLP Admin Digest Notification](/workflow-automation/responding-dlp-admin-digest-notification)
+  - **Dashboard**
+    - [About the Incident Analytics Dashboard](/workflow-automation/about-incident-analytics-dashboard)
+  - **API Management**
+    - [About API Keys](/workflow-automation/about-api-keys)
+    - [Managing Workflow Automation API Keys](/workflow-automation/managing-workflow-automation-api-keys)
+  - **Workflow Automation API**
+    - [Understanding Workflow Automation API](/workflow-automation/understanding-workflow-automation-api)
+    - **API Developer & Reference Guide**
+      - [Getting Started](/workflow-automation/getting-started-workflow-automation-api)
+      - [Configuring the Postman REST API Client](/workflow-automation/configuring-postman-rest-api-client-workflow-automation-api)
+      - [Understanding API Rate Limiting](/workflow-automation/understanding-api-rate-limiting-workflow-automation-api)
+      - [API Response Codes and Error Messages](/workflow-automation/api-response-codes-error-messages-workflow-automation-api)
+      - **Reference Guide**
+        - [Audit Logs](/workflow-automation/audit-logs)
+        - [API Authentication](/workflow-automation/api-authentication-workflow-automation-api)
+        - [DLP Incidents](/workflow-automation/dlp-incidents-workflow-automation-api)
+        - [API Rate Limit Summary](/workflow-automation/api-rate-limit-summary-workflow-automation-api)
+- **Zscaler Digital Experience**
+  - **Getting Started**
+    - [Step-by-Step Configuration Guide for Workflow Automation for ZDX Alerts](/workflow-automation/step-step-configuration-guide-workflow-automation-zdx)
+    - **Admin Portal**
+      - [Accessing and Navigating the Workflow Automation Admin Portal for ZDX Alerts](/workflow-automation/accessing-and-navigating-workflow-automation-admin-portal-zdx)
+  - **Setup**
+    - [Adding Integrations for ZDX Alerts](/workflow-automation/adding-integrations-zdx-alerts)
+    - [Managing ServiceNow Integration for ZDX Alerts](/workflow-automation/managing-servicenow-integration-zdx-alerts)
+    - [Managing Integration Users for ZDX Alerts](/workflow-automation/managing-integration-users-zdx-alerts)
+  - **Workflows**
+    - [Understanding Workflows for ZDX Alerts](/workflow-automation/understanding-workflows-zdx-alerts)
+    - [Managing Workflow Templates for ZDX Alerts](/workflow-automation/managing-workflow-templates-zdx-alerts)
+    - [Managing Workflows for ZDX Alerts](/workflow-automation/managing-workflows-zdx-alerts)
+    - [Managing Workflow Mappings for ZDX Alerts](/workflow-automation/managing-workflow-mappings-zdx-alerts)
+    - [Managing Shared Configurations for ZDX Alerts](/workflow-automation/managing-shared-configuration-zdx-alerts)
+- **Business Insights**
+  - **Getting Started**
+    - [Step-by-Step Configuration Guide for Workflow Automation for Events](/workflow-automation/step-step-configuration-guide-workflow-automation-events)
+    - **Admin Portal**
+      - [Accessing and Navigating the Workflow Automation Admin Portal for Events](/workflow-automation/accessing-and-navigating-workflow-automation-admin-portal-events)
+      - [Using Tables in Workflow Automation for Events](/workflow-automation/using-tables-workflow-automation-events)
+  - **Events**
+    - [Managing Events](/workflow-automation/managing-events)
+    - [Managing Event Details](/workflow-automation/managing-event-details)
+    - [Responding to an End User Notification for Events](/workflow-automation/responding-end-user-notification-events)
+  - **Event Groups**
+    - [Managing Event Groups](/workflow-automation/managing-event-groups)
+    - [Managing Event Group Mappings](/workflow-automation/managing-event-group-mappings)
+  - **Setup**
+    - [Managing Priorities for Events](/workflow-automation/managing-priorities-events)
+    - [Managing Integration Users for Events](/workflow-automation/managing-integration-users-events)
+    - [Adding Integrations for Events](/workflow-automation/adding-integrations-events)
+    - [Managing ServiceNow Integration for Events](/workflow-automation/managing-servicenow-integration-events)
+    - [Managing Notification Templates for Events](/workflow-automation/managing-notification-templates-events)
+    - [Adding Email Notification Templates for Events](/workflow-automation/adding-email-notification-templates-events)
+    - [Managing Survey Templates for Events](/workflow-automation/managing-survey-templates-events)
+    - [Managing Template Mappings for Events](/workflow-automation/managing-template-mappings-events)
+  - **Workflows**
+    - [Understanding Workflows for Events](/workflow-automation/understanding-workflows-events)
+    - [Managing Workflow Templates for Events](/workflow-automation/managing-workflow-templates-events)
+    - [Managing Workflows for Events](/workflow-automation/managing-workflows-events)
+    - [Managing Workflow Mappings for Events](/workflow-automation/managing-workflow-mappings-events)
+- **Release Notes**
+  - [Release Upgrade Summary (2025)](/workflow-automation/release-upgrade-summary-2025)
+  - [Release Upgrade Summary (2024)](/workflow-automation/release-upgrade-summary-2024)
+  - [Release Upgrade Summary (2023)](/workflow-automation/release-upgrade-summary-2023)

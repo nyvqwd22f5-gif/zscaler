@@ -1,0 +1,192 @@
+# Supported IaC Templates and Functions
+Source: https://help.zscaler.com/zpc/supported-iac-templates-and-functions
+PDF: https://help.zscaler.com/pdf/com/en/1409826.pdf
+
+The Zscaler IaC Scan tool can scan various types of IaC templates and parse specific functions for each template type.
+Supported Templates
+The Zscaler IaC Scan supports the following IaC templates and versions:
+- AWS Cloud Formation (JSON, YAML): All versions
+- Kubernetes: All versions
+- Azure Resource Manager (ARM): All versions
+ZPC provides support for linked templates. If an ARM template is linked to a remote template, then ZPC downloads the remote template, performs the scan on the remote template, and also reports violations that are detected in the linked templates. To learn more about linked and nested templates, see the [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/linked-templates?tabs=azure-powershell).
+- Helm: Version 3 and above
+- Terraform: Version 0.14 and above
+- Terraform Plan: Versions 0.x and 1.x
+Terraform Plan supports all CI/CD Pipelines, except for Jenkins in Pipeline mode only. Also, some alert properties are not captured for Terraform Plan templates. To learn more, see [About Alerts](/zpc/about-alerts).
+Supported Functions
+The Zscaler IaC Scan supports various functions for the following templates:
+- [CloudFormation Template](#cffunction)
+- [Terraform Template](#tcategories)
+- [ARM Template](#arm-functions)
+- []Fn::And
+- Fn::Base64
+- Fn::Equals
+- Fn::FindInMap
+- Fn::GetAZs
+- Fn::If
+- Fn::Join
+- Fn::Not
+- Fn::Or
+- Fn::Select
+- Fn::Split
+- Fn::Sub
+- Ref
+- [][Collection Functions](#t-collection)
+- [Date Function](#terraform-date)
+- [Encoding Functions](#t-encoding)
+- [File System Functions](#terraform-filesystem)
+- [Hash and Crypto Functions](#t-hashcrypto)
+- [IP Network Functions](#t-ipnetwork)
+- [Numeric Functions](#t-numeric)
+- [String Functions](#t-string)
+- [Time Functions](#terraform-time)
+- [Type Conversion Functions](#t-typeconvert)
+- []abs
+- ceil
+- floor
+- log
+- max
+- min
+- parseint
+- pow
+- signum
+- []chomp
+- format
+- formatlist
+- indent
+- join
+- lower
+- regex
+- regexall
+- replace
+- split
+- strrev
+- substr
+- title
+- trim
+- trimprefix
+- trimspace
+- trimsuffix
+- upper
+- []alltrue
+- anytrue
+- chunklist
+- coalesce
+- coalescelist
+- compact
+- concat
+- contains
+- contains
+- distinct
+- element
+- flatten
+- index
+- keys
+- length
+- lookup
+- merge
+- one
+- range
+- reverse
+- setintersection
+- setproduct
+- setsubtract
+- setunion
+- slice
+- sort
+- sum
+- transpose
+- values
+- zipmap
+- []base64decode
+- base64encode
+- csvdecode
+- jsondecode
+- jsonencode
+- textdecodebase64
+- textencodebase64
+- urlencode
+- yamldecode
+- yamlencode
+- []base64sha256
+- base64sha512
+- bcrypt
+- md5
+- rsadecrypt
+- sha1
+- sha256
+- sha512
+- uuid
+- uuidv5
+- []cidrhost
+- cidrnetmask
+- cidrsubnet
+- cidrsubnets
+- []tobool
+- tolist
+- tomap
+- tomap
+- tonumber
+- toset
+- tostring
+- [][Array Functions](#arm-array)
+- [Comparison Functions](#arm-comparison)
+- [Date Functions](#arm-date)
+- [Logical Functions](#arm-logical)
+- [Numeric Functions](#arm-numeric)
+- [Object Functions](#arm-object)
+- [String Functions](#arm-string)
+- []concat
+- contains
+- []equals
+- less
+- lessOrEquals
+- greater
+- greaterOrEquals
+- []and
+- bool
+- false
+- if
+- not
+- or
+- true
+- []contains
+- length
+- []base64
+- base64ToString
+- format
+- guid
+- newGuid
+- length
+- concat
+- contains
+- split
+- toLower
+- trim
+- uniqueString
+- uri
+- uriComponent
+- uriComponentToString
+- []float
+- int
+- max
+- min
+- mod
+- mul
+- sub
+- []dateTimeAdd
+- dateTimeFromEpoch
+- dateTimeToEpoch
+- utcNow
+- []abspath
+- dirname
+- pathexpand
+- basename
+- file
+- fileexists
+- fileset
+- filebase64
+- templatefile
+[]Formatdate
+- []Timeadd
+- Timestamp

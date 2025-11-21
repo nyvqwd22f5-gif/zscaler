@@ -1,0 +1,8 @@
+# Local Browser Rendering for Isolation
+Source: https://help.zscaler.com/isolation/local-browser-rendering-isolation
+PDF: https://help.zscaler.com/pdf/com/en/1377401.pdf
+
+[Watch a video about Local Browser Rendering in Isolation.](https://fast.wistia.net/embed/iframe/gf9ktk3dss)
+Isolation lets admins decide whether or not users can access different domains while in Isolation. If this feature is enabled, link redirects for users will be evaluated by the Isolation session. If the link leads to a domain different than the one accessed at the beginning of Isolation, the new page will be rendered on the user's local browser, outside of the Isolation session.
+For example, if a user in Isolation clicks a link which redirects to a new page in the same tab, the tab will load the new page but remove the layer of the isolated session. However, by clicking the Back button on the browser, the user can return to the prior page and in doing so will return to the ongoing isolated session. Similarly, if a user in Isolation clicks a link that redirects to a different domain in a new window or tab, that new window or tab will open outside of the isolated session.
+The Isolation session will still be accessible to the user until the configured idle timeout is reached. If the window with the open Isolation session goes idle, the session will expire. Admins can enable this capability for users per Isolation profile. To learn more, see [Creating Isolation Profiles for ZIA](/isolation/creating-isolation-profiles-zia) and [Creating Isolation Profiles for ZPA](/isolation/creating-isolation-profiles-zia).

@@ -6,6 +6,8 @@ This article provides a summary of all new features and enhancements released pe
 **Clouds:** private.zscaler.com, zpatwo.net, zpabeta.net, zpapreview.net
 The Private Cloud Controller versions listed below were deployed to private.zscaler.com on
 
+## November 21, 2025
+
 ## October 31, 2025
 
 ## September 23, 2025

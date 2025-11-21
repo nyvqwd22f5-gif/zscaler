@@ -1,0 +1,23 @@
+# Avoiding Google Captcha and Geolocation Issues
+Source: https://help.zscaler.com/zia/avoiding-google-captcha-and-geolocation-issues
+PDF: https://help.zscaler.com/pdf/com/en/1398966.pdf
+
+Google Search is the world's most popular search engine with billions of web searches performed every day. Google also provides a suite of productivity apps, G Suite, along with many other consumer tools, such as Maps and Gmail. By default, the Google Search home page and other Google Enterprise services are accessed over an SSL connection.
+Occasionally, Zscaler customers have reported the following issues while accessing Google Search services through the Zscaler platform:
+- **CAPTCHA on google.com:** When a user enters a search string in google.com, instead of displaying search results, users are subject to a CAPTCHA screen that they must complete before the search results are displayed.
+- **Geolocation error:** The Google homepage and search results displayed do not match the user's location. For example, a user in Miami might be shown search results in Spanish and the Google homepage URL as https://google.com.mx
+Zscaler has taken multiple steps to mitigate these issues:
+- Google and Zscaler are in constant communication regarding Zscaler's multi-tenant data center footprint and IP address ranges.
+- The Zscaler Operations team performs automated monitoring for Google reCAPTCHA and geolocation issues.
+- Zscaler has an agreement with Google to use XFF headers to isolate offending Zscaler clients.
+The suggestions provided in this article reduce the likelihood of these issues occurring, but they might not completely resolve them. Zscaler continues to work with Google to resolve these issues permanently.
+Resolving Google CAPTCHA Issues
+Google displays a CAPTCHA screen when it needs to verify that a search query is being performed by an actual user and not by an automated bot or program with malicious intent. Google has built a proprietary algorithm to detect such behavior. While Zscaler forbids the use of its proxy services for automated testing as part of its contract, some customers doing automated queries on Google trigger the search engine to respond with a CAPTCHA. This can affect other users sending traffic through the same Zscaler IP address.
+Zscaler recommends that customers enable [SSL inspection](/zia/about-ssl-inspection), so Zscaler can insert an XFF header in each request. Inserting an XFF header allows Google to isolate the offending client, without affecting the traffic of other clients. SSL inspection should be enabled for either google.com or the Web Search URL category. To enable SSL inspection, see [Configuring SSL Inspection Policy](/zia/configuring-ssl-inspection-policy).
+Resolving Geolocation Issues
+Geolocation errors occur when the Zscaler data center IP address ranges are incorrectly interpreted by Google's Geo-IP mapping system. This might lead to an IP address being incorrectly mapped to a different region. For example, an IP address in Miami can be mapped to an IP address in Mexico City.
+To resolve this issue, Zscaler has shared its IP ranges with Google, and barring a rare corruption of the Geo-IP system, this issue is fixed.
+Also, in certain regions, geolocation errors occur when Zscaler customers are sending data to Zscaler from countries where Zscaler doesn't have a data center. In this case, Google returns content based on the IP address of the Zscaler data center.
+To resolve this issue, Zscaler recommends that customers turn on SSL inspection. This allows Google to read a customer's actual IP address along with the Zscaler data center IP address and return geolocalized content. Customers who cannot enable SSL can run into this issue. Additionally, to avoid geolocation errors, ask your users to use Google's NCR plugin for the Chrome browser to bookmark google.com/ncr to redirect your traffic to google.com instead of a local, geolocalized Google page. SSL inspection should be enabled for either google.com or the Web Search URL category. To enable SSL inspection, see [Configuring SSL Inspection Policy](/zia/configuring-ssl-inspection-policy).
+You can go to Google’s [Report IP problems](https://support.google.com/websearch/contact/ip) page to log any inconsistencies with GeoIP lookups directly with Google, or you can work with your internet service provider (ISP) to update the Google GeoIP database for the IP addresses assigned to you at [Google ISP Portal](https://isp.google.com/).
+Your internet service provider (ISP) must sign up and update the geofeed to access the [Google ISP Portal](https://isp.google.com/).

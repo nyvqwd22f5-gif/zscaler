@@ -1,0 +1,8 @@
+# Zscaler and ExtraHop Deployment Guide
+Source: https://help.zscaler.com/zscaler-technology-partners/zscaler-and-extrahop-deployment-guide
+PDF: https://help.zscaler.com/pdf/com/en/1529231.pdf
+
+The Zscaler and ExtraHop Deployment Guide provides instructions on using Zscaler Internet Access (ZIA) and Zscaler Private Access (ZPA) features with ExtraHop Reveal(x) 360.
+ZIA Public Service Edges are full-featured, inline internet security gateways that inspect all internet traffic bidirectionally for malware and enforce security and compliance policies. An organization can forward its traffic to any ZIA Public Service Edge in the world, or use the advanced geo-IP resolution capability of Zscaler to direct its users' traffic to the nearest ZIA Public Service Edge. When the user moves to a different location, the policy follows the user, with the ZIA Public Service Edge downloading the appropriate policy.
+By integrating with the ExtraHop system, you can automatically contain assets that meet certain conditions and thresholds found in ExtraHop detections using Zscaler Firewall Policies. The details of every Firewall containment are stored in the ExtraHop system for further analysis and auditing. In addition, the integration tracks the list of high-risk offender devices where the asset was not found in Zscaler and could not be contained.
+[Zscaler and ExtraHop Deployment Guide](/downloads/zscaler-technology-partners/c-e/zscaler-and-extrahop-deployment-guide/Zscaler-ExtraHop-Deployment-Guide-FINAL.pdf) [Download PDF](/downloads/zscaler-technology-partners/c-e/zscaler-and-extrahop-deployment-guide/Zscaler-ExtraHop-Deployment-Guide-FINAL.pdf)

@@ -1,0 +1,7 @@
+# About Security Policy
+Source: https://help.zscaler.com/zpa/about-security-policy
+PDF: https://help.zscaler.com/pdf/com/en/1485666.pdf
+
+The Security Policy tab includes AppProtection and Browser Protection policy-specific features. The AppProtection Policy page and Browser Protection Policy page are displayed if your account has these features enabled. If these features aren't enabled, the Security Policy tab is not shown.
+The AppProtection Policy page contains the AppProtection feature. You can configure an AppProtection policy rule to designated AppProtection controls, which allows them to inspect traffic for specified web applications with the criteria that you select. When this policy rule is set, you can use the allotted functions for that AppProtection control for ZPA web applications. To learn more, [About AppProtection Policy](/zpa/about-appprotection-policy) and [Configuring AppProtection Policies](/zpa/configuring-appprotection-policies).
+The Browser Protection Policy page contains the Browser Protection feature. You can configure a Browser Protection policy rule to designated Browser Protection profiles, which allows them to monitor and fingerprint browser access sessions with the criteria that you select. When this policy rule is set, you can use the allotted functions for the browsers and operating systems assigned to that Browser Protection profile. To learn more, [About Browser Protection Policy](/zpa/about-browser-protection-policy) and [Configuring Browser Protection Policies](/zpa/configuring-browser-protection-policies).
