@@ -1,0 +1,21 @@
+# Understanding Source IP Anchoring
+Source: https://help.zscaler.com/unified/understanding-source-ip-anchoring
+PDF: https://help.zscaler.com/pdf/com/en/1497691.pdf
+
+Forwarding policies for Source IP Anchoring allow organizations to steer selective traffic processed by the Internet & SaaS to the internal or external destination servers of their choice. This ensures that Zscaler secures the traffic and that the source IP address is the organization's choice. The application traffic is forwarded through the *intranet* to the internal destination servers and through the *internet *to the external destination servers.
+Source IP Anchoring does not support the Real Time Streaming Protocol (RTSP).
+Some cloud applications or web services restrict access based on the source IP address of the traffic. These applications require that your traffic originates from a preregistered unique IP address, which usually belongs to your organization. These applications deny access to user traffic that originates from other IP addresses within or outside the organization, such as the Zscaler data center's IP address that is not preregistered with the service. Some other applications allow access only from specific countries where Zscaler does not have a presence. For example, some government sites hosted in a country may be accessible only from within that country. Because Zscaler does not have a data center within that country, the users of that country use a data center from the nearest country and do not have access to certain federal sites.
+In such scenarios, the organizations bypass some traffic from the Zscaler service and create a security gap. Alternatively, organizations use Private Service Edge or Virtual Service Edge to ensure that the IP addresses hosted and owned by them are assigned to the traffic egressing from the Zscaler service.
+The Source IP Anchoring feature is not supported by Virtual Service Edges.
+By using Forwarding policies for Source IP Anchoring, you can control the source IP address of the traffic forwarded to the destination servers without bypassing the Zscaler security service. These source IP addresses can be owned and hosted by you, or the IP addresses can be owned, hosted, and provisioned by Zscaler for your dedicated use. To learn more about Zscaler's Dedicated IP service, see [Understanding Zscaler-Managed Dedicated IP](/unified/understanding-zscaler-managed-dedicated-ip).
+Source IP Anchoring uses [forwarding policies](/unified/about-forwarding-control) and Private Applications' [App Connectors](/unified/about-app-connectors). You can configure these granular policies on the Admin Portal and [forward the selected traffic to Private Applications](/unified/configuring-forwarding-policy) through Internet & SaaS threat and data protection engines. These policies use Internet & SaaS and Private Applications to selectively forward the application traffic to the appropriate destination servers via the [App Connectors](/unified/about-app-connectors) of your choice. To learn more, see [Configuration of Source IP Anchoring](/unified/configuring-source-ip-anchoring).
+You don't need a Private Applications license to access the Source IP Anchoring feature.  However, a Source IP Anchoring subscription is required. For more information, contact Zscaler Support.
+Source IP Anchoring supports ICMP requests for ICMP-enabled Private Applications' application segments. The following limitations apply:
+- Only ICMP echo requests or responses are supported.
+- The ICMP protocol traceroute functionality is not supported. Therefore, you must use Digital Experience Monitoring to trace the path of your traffic flow.
+- The maximum payload size for the ICMP traffic is restricted to 990 bytes.
+To learn how to enable ICMP access for Private Applications' application segments, see [Configuring Defined Application Segments](/unified/configuring-defined-application-segments).
+![Source IP Anchoring Traffic Flow](/downloads/unified/networking/internet-saas/network-policies/forwarding-control/dedicated-ip/customer-managed-dedicated-ip-source-ip-anchoring/understanding-source-ip-anchoring/Unified-Source-IP-Anchoring.png)
+The technology used for Source IP Anchoring is also leveraged for the following additional use cases on Private Applications traffic:
+- Data protection
+- Threat scanning

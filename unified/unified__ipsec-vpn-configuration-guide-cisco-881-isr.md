@@ -1,0 +1,340 @@
+# IPSec VPN Configuration Guide for Cisco 881 ISR
+Source: https://help.zscaler.com/unified/ipsec-vpn-configuration-guide-cisco-881-isr
+PDF: https://help.zscaler.com/pdf/com/en/1495381.pdf
+
+This article uses only sample IP addresses in the configuration steps and screenshots. For tunnel interface configuration, you must use only RFC 1918 IP addresses and not APIPA addresses.
+This article illustrates how to configure two IPSec VPN tunnels from a Cisco 881 Integrated Services Router (ISR) to two Internet & SaaS Public Service Edges: a primary tunnel from the router to an Internet & SaaS Public Service Edge in one data center and a secondary tunnel from the router to an Internet & SaaS Public Service Edge in another data center.
+![A network diagram showing the primary and secondary IPSec tunnels from a Cisco ISR appliance to two Zscaler ZIA Public Service Edges.](/downloads/zia/traffic-forwarding/ipsec/ipsec-vpn-configuration-example-cisco-881-isr/zia-ipsec-cisco-isr.png)
+Zscaler IPSec tunnels support a limit of 400 Mbps for each public source IP address. If your organization wants to forward more than 400 Mbps of traffic, Zscaler recommends using one of the following configurations:
+- Configure multiple IPSec tunnels with different public source IP addresses.
+- Configure multiple IPSec VPN tunnels with the same public source IP address using Network Address Translation Traversal (NAT-T) and source port randomization with IKEv2.
+For example, if your organization forwards 800 Mbps of traffic, you can configure two primary VPN tunnels and two backup VPN tunnels.
+Organizations typically forward all traffic destined for any port to the Zscaler service. Alternatively, you can limit the traffic that you forward to Zscaler to HTTP and HTTPS traffic (i.e., traffic destined for port 80 and port 443). Regardless, tunneling provides visibility into the internal IP addresses, which can be used for the Zscaler security policies and logging.
+Prerequisites
+Ensure you have the following information for setting up the IPSec VPN tunnels:
+- [IP addresses of the Internet & SaaS Public Service Edges (IKEv2)](/unified/locating-hostnames-and-ip-addresses-internet-saas-public-service-edges)
+- [Global Internet & SaaS Public Service Edge IP addresses](/unified/about-global-public-service-edges)
+- [Maximum Transmission Unit (MTU)](/unified/determining-optimal-mtu-gre-or-ipsec-tunnels)
+- Zscaler cloud name
+If you are unable to ping both Internet & SaaS Public Service Edge IP addresses, contact Zscaler Support.
+Configuring the IPSec VPN Tunnel in the Admin Portal
+In this configuration example, the peers are using an FQDN and a pre-shared key (PSK) for authentication.
+To configure the IPSec VPN tunnels in the Admin Portal:
+- [Add the VPN Credential](/unified/adding-vpn-credentials)
+You need the FQDN and PSK when linking the VPN credentials to a location and creating the IKE gateways.
+- [Link the VPN Credentials to a Location](/unified/configuring-locations)
+Configuring the IPSec VPN Tunnel on Cisco 881 ISR
+This article only covers the configuration details of IPSec VPN tunnels between the Cisco 881 ISR and the Internet & SaaS Public Service Edges. For any other specific information about the Cisco 881 ISR, refer to the [Cisco documentation](https://www.cisco.com/c/en/us/support/routers/881-secure-fast-ethernet-multi-mode-4g-lte-isr-router/model.html?dtid=osscdc000283).
+This section describes how to configure two IPSec VPN tunnels on Cisco 881 ISR running Cisco IOS 15.4(3)M3. Both tunnels must be configured at your gateway. Only a single tunnel is operational at any time. The second tunnel acts as a backup tunnel. This configuration uses CLI commands. To learn more about these commands, see the Cisco documentation. You must have a Cisco 881 ISR running Cisco IOS version 15.1.1T or later to configure IKEv2.
+You must provide the following information to configure the tunnels:
+- <FQDN> - The FQDN of the VPN credentials you created in the Admin Portal.
+- <Pre-Shared Key> - The pre-shared key of the VPN credentials you created in the Admin Portal.
+- <LAN Interface> - The LAN interface of the ISR.
+- <WAN Interface> - The WAN interface of the ISR.
+- <MTU> - The optimal MTU for the tunnels.
+- <Primary VPN IP Address> and <Backup VPN IP Address> - The IP addresses of the Internet & SaaS Public Service Edges.
+- <Primary Global Internet & SaaS Public Service Edge IP Address> and <Backup Global Internet & SaaS Public Service Edge IP Address> - The global IP addresses of the Internet & SaaS Public Service Edges.
+- <Exempted Server IP> - Traffic to this IP address or IP subnet is not sent through the VPN tunnels to Zscaler. The IP address or IP subnet can be an internal server farm reachable through a router or an external public IP address that must be excluded from being routed through the tunnel.
+- <Zscaler Cloud> - Your Zscaler cloud name.
+To configure the IPSec VPN tunnel on Cisco 881 ISR:
+Zscaler does not support Extended Sequence Number (ESN) based proposals during IPSec tunnel negotiation.
+- [1. Configure the IKEv2 Proposal](#ikev2-proposal)
+- [2. Configure the IKEv2 Policy](#ikev2-policy)
+- [3. Configure the IKEv2 Key Ring](#ikev2-key-ring)
+- [4. Configure the IKEv2 Profiles](#ikev2-profiles)
+- [5. Enable Dead Peer Detection (DPD)](#dpd)
+- [6. Enable NAT Keepalive](#nat)
+- [7. Define the IPSec Transform Set](#ipsec-transform-set)
+- [8. Enable IPSec Fragmentation](#ipsec-fragmentation)
+- [9. Configure the IPSec Profiles](#ipsec-profiles)
+- [10. Create the Tunnel Interfaces](#ikev2-tunnel-interfaces)
+- [11. Create the Access Control List (ACL)](#ikev2-acl)
+- [12. Define the Route Map](#ikev2-route-map)
+- [13. Configure Network Address Translation (NAT)](#ikev2-nat)
+- [14. Configure IP SLA for VPN Monitoring](#ikev2-ip-sla)
+Troubleshooting
+In the Admin Portal, you can go to Logs > Insights > Tunnel Insights to see data as well as monitor the health and status of your configured IPSec VPN tunnels. To learn more, see [About Insights](/unified/about-insights) and [About Insights Logs](/unified/about-insights-logs).
+On the Cisco router, you can use the following troubleshooting commands while setting up the tunnels. Note the values in green while troubleshooting.
+- [Troubleshooting Phase 1](#phase1)
+- [Troubleshooting Phase 2](#phase2)
+- [Tracking the IP SLA Status](#ipslastatus)
+- [Viewing IP SLA Statistics](#SLAstatistics)
+- [Verifying the Tunnel Failover](#failover)
+[]Configure the IKEv2 proposal to negotiate the IKEv2 SA in the IKE_SA_INIT exchange. The IKEv2 proposal defines the encryption algorithm, authentication method, data integrity algorithm, and Diffie-Hellman group parameters used for the IKE negotiation.
+Enter the following commands:
+crypto ikev2 proposal <Proposal Name>
+encryption aes-cbc-256
+integrity sha1
+group 14
+You need the <Proposal Name> for [2. Configure the IKEv2 Policy](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-policy).
+[]Configure the IKEv2 policy to associate with the IKEv2 proposal. The IKEv2 policy defines the proposal used during the IKE negotiation. You need the <Proposal Name> created in [1. Configure the IKEv2 Proposal](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-proposal).
+Enter the following commands:
+crypto ikev2 policy <Policy Name>
+match fvrf any
+proposal <Proposal Name>
+[]Configure the IKEv2 key ring if the peer authentication method is a PSK.
+Enter the following commands:
+crypto ikev2 keyring <Key Ring Name>
+peer <Peer 1 Name>
+address <Primary VPN IP Address>
+pre-shared-key <Pre-Shared Key>
+peer <Peer 2 Name>
+address <Backup VPN IP Address>
+pre-shared-key <Pre-Shared Key>
+You need the <Key Ring Name> for [4. Configure the IKEv2 Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-profiles).
+[]Configure two IKEv2 profiles to define the nonnegotiable parameters for the IKE SA. You need the <Key Ring Name> created in [3. Configure the IKEv2 Key Ring](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-key-ring).
+Enter the following commands:
+crypto ikev2 profile <IKEv2 Profile 1 Name>
+match identity remote address <Primary VPN IP Address>
+identity local email <FQDN>
+authentication remote pre-share
+authentication local pre-share
+keyring local <Key Ring Name>
+lifetime 86400
+no config-exchange request
+crypto ikev2 profile <IKEv2 Profile 2 Name>
+match identity remote address <Backup VPN IP Address>
+identity local email <FQDN>
+authentication remote pre-share
+authentication local pre-share
+keyring local <Key Ring Name>
+lifetime 86400
+no config-exchange request
+You need the <IKEv2 Profile 1 Name> and <IKEv2 Profile 2 Name> for [9. Configure the IPSec Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ipsec-profiles) and [10. Create the Tunnel Interfaces](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-tunnel-interfaces).
+[]Enter the following command:
+crypto ikev2 dpd 10 5 periodic
+[]Enter the following command:
+crypto ikev2 nat keepalive 20
+[]The IPSec transform set defines the encryption, authentication, and IPSec mode parameters for the IKE_AUTH exchange.
+Enter the following commands:
+crypto ipsec transform-set <Transform Set Name> esp-null esp-sha-hmac
+mode tunnel
+Zscaler recommends using NULL encryption for Phase 2 because it reduces the load on the local router/firewall for traffic destined for the internet. If you want to use AES, you can purchase a separate subscription and use the command `esp-aes`.
+You need the <Transform Set Name> for [9. Configure the IPSec Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ipsec-profiles).
+[]Enable IPSec fragmentation after the encryption.
+Enter the following command:
+crypto ipsec fragmentation after-encryption
+[]Configure two IPSec profiles to associate with your IKEv2 profiles. You need the <Transform Set Name> created in [7. Define the IPSec Transform Set](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ipsec-transform-set) and the <IKEv2 Profile 1 Name> and <IKEv2 Profile 2 Name> created in [4. Configure the IKEv2 Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-profiles).
+Enter the following commands:
+crypto ipsec profile <IPSec Profile 1 Name>
+set security-association lifetime seconds 28800
+set security-policy limit 1
+set transform-set <Transform Set Name>
+set ikev2-profile <IKEv2 Profile 1 Name>
+crypto ipsec profile <IPSec Profile 2 Name>
+set security-association lifetime seconds 28800
+set security-policy limit 1
+set transform-set <Transform Set Name>
+set ikev2-profile <IKEv2 Profile 2 Name>
+You need the <IPSec Profile 1 Name> and <IPSec Profile 2 Name> for [10. Create the Tunnel Interfaces](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-tunnel-interfaces).
+[]Create two tunnel interfaces that are associated with your IPSec and IKEv2 profiles. All traffic routed to the tunnel interface is encrypted and transmitted to the Internet & SaaS Public Service Edge. Similarly, traffic from the Internet & SaaS Public Service Edge is logically received on the interface. You can use the `tunnel protection `command to associate the interfaces with the Child SA.
+You need the <IPSec Profile 1 Name> and <IPSec Profile 2 Name> created in [9. Configure the IPSec Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ipsec-profiles) and the <IKEv2 Profile 1 Name> and <IKEv2 Profile 2 Name> created in [4. Configure the IKEv2 Profiles](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-profiles).
+Enter the following commands:
+interface <Primary Tunnel Interface>
+ip unnumbered <WAN Interface>
+ip mtu <MTU>
+ip tcp adjust-mss 1360
+tunnel source <WAN Interface>
+tunnel mode ipsec ipv4
+tunnel destination <Primary VPN IP Address>
+tunnel protection ipsec profile <IPSec Profile 1 Name> ikev2-profile <IKEv2 Profile 1 Name>
+interface <Backup Tunnel Interface>
+ip unnumbered <WAN Interface>
+ip mtu <MTU>
+ip tcp adjust-mss 1360
+tunnel source <WAN Interface>
+tunnel mode ipsec ipv4
+tunnel destination <Backup VPN IP Address>
+tunnel protection ipsec profile <IPSec Profile 2 Name> ikev2-profile <IKEv2 Profile 2 Name>
+You need the <Primary Tunnel Interface> and <Backup Tunnel Interface> for [12. Define the Route Map](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-route-map) and [14. Configure IP SLA for VPN Monitoring](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-ip-sla).
+[]Create an ACL to send relevant traffic through the tunnel. Most organizations forward all traffic to Zscaler. You can use any of the following commands to configure your ACL:
+- If you want to send all traffic through the tunnel, enter the following:
+access-list <ACL Number> permit ip any any
+- If you only want to send web traffic (i.e., HTTP and HTTPS) through the tunnel, enter the following:
+access-list <ACL Number> permit tcp any any eq 80
+access-list <ACL Number> permit tcp any any eq 443
+- If you want traffic to a web server to be exempted from going through the tunnel, enter the following:
+access-list <ACL Number> deny ip any <Exempted Server IP>
+access-list <ACL Number> permit tcp any any eq 80
+access-list <ACL Number> permit tcp any any eq 443
+You need the <ACL Number> for [12. Define the Route Map](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-route-map).
+[]Define a route map that links the ACL with the tunnel interfaces. You need the <ACL Number> created in [11. Create the Access Control List (ACL)](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-acl) and the <Primary Tunnel Interface> and <Backup Tunnel Interface> created in [10. Create the Tunnel Interfaces](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-tunnel-interfaces).
+Enter the following commands:
+route-map <Route Map Name> permit 1
+match ip address <ACL Number>
+set interface <Primary Tunnel Interface> <Backup Tunnel Interface>
+You need the <Route Map Name> for [13. Configure Network Address Translation (NAT)](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-nat).
+[]Configure NAT on the WAN and LAN interfaces. You need the <Route Map Name> created in [12. Define the Route Map](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-route-map).
+Enter the following commands:
+interface <WAN Interface>
+description $ES_WAN$
+ip address 10.96.19.244 255.255.255.0
+ip access-group <ACL Number> in
+ip access-group <ACL Number> out
+ip nat outside
+ip virtual-reassembly in
+duplex auto
+speed auto
+interface <LAN Interface>
+ip address 172.17.0.128 255.255.255.0
+ip access-group <ACL Number> in
+ip access-group <ACL Number> out
+ip nat inside
+ip virtual-reassembly in
+ip policy route-map <Route Map Name>
+[]The IP SLA monitor is used to provide failover between the two tunnels. If the primary tunnel fails, the backup tunnel is used automatically. Ensure the IP address used for VPN monitoring is reachable.
+The following IP SLAs are defined as `ip sla 1 `and `ip sla 2`. In your configuration, you can optionally define different values for the tracking object and the IP SLA operation ID numbers (e.g., `track 3 ip sla 3`). The ID numbers show in the output of the `show track ``<ID>` command when later [tracking the IP SLA status](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ipslastatus).
+You need the <Primary Tunnel Interface> and <Backup Tunnel Interface> created in [10. Create the Tunnel Interfaces](/unified/ipsec-vpn-configuration-guide-cisco-881-isr#ikev2-tunnel-interfaces).
+If you use PAC files to forward traffic through the tunnel, ensure that you use different Global Internet & SaaS Public Service Edge IP addresses for IP SLA monitoring and your PAC files. Using the same Global Internet & SaaS Public Service Edge IP addresses causes the PAC files to send all packets through the same tunnel regardless of the tunnel interface state.
+Enter the following commands:
+config IP SLA
+track 1 ip sla 1 state
+delay down 180 up 180
+track 2 ip sla 2 state
+delay down 180 up 180
+ip route <Primary Global Internet & SaaS Public Service Edge IP Address> 255.255.255.255 <Primary Tunnel Interface> permanent
+ip route <Backup Global Internet & SaaS Public Service Edge IP Address> 255.255.255.255 <Backup Tunnel Interface> permanent
+ip sla 1
+http raw http://<Primary Global Internet & SaaS Public Service Edge IP Address>:80
+http-raw-request
+GET http://gateway.<Zscaler Cloud>.net/vpntest HTTP/1.0\r\n
+User-Agent: Cisco IP SLA\r\n
+end\r\n
+\r\n
+exit
+threshold 300
+timeout 5000
+ip sla schedule 1 life forever start-time now
+ip sla 2
+http raw http://<Backup Global Internet & SaaS Public Service Edge IP Address>:80
+http-raw-request
+GET http://gateway.<Zscaler Cloud>.net/vpntest HTTP/1.0\r\n
+User-Agent: Cisco IP SLA\r\n
+end\r\n
+\r\n
+exit
+threshold 300
+timeout 5000
+ip sla schedule 2 life forever start-time now
+ip sla reaction-configuration 1 react rtt threshold-value 300 1 threshold-type consecutive 3
+ip sla reaction-configuration 2 react rtt threshold-value 300 1 threshold-type consecutive 3
+If you want to configure VPN monitoring for more tunnels, see [additional Global Internet & SaaS Public Service Edge IP addresses](/unified/about-global-public-service-edges).
+[]Use the `show crypto isakmp sa` command to troubleshoot Phase 1 of the tunnel. The response shows an organization’s gateway with IKE configured correctly. The status value is `ACTIVE`.
+The <Customer IP> is the customer's public IP address on the WAN interface of the ISR.
+IPv4 Crypto ISAKMP SA
+dst 	                  src                 state              conn-id       status*
+*<Primary VPN Hostname>	  <Customer IP>       QM_IDLE            2012          ACTIVE*
+*<Backup VPN Hostname>     <Customer IP>       AG_INIT_EXCH       2011          ACTIVE
+IPv6 Crypto ISAKMP SA
+[]Use the `show crypto ipsec sa` command to troubleshoot Phase 2 of the tunnel. The response shows an organization’s gateway with IKE configured correctly. Ensure that some packets are encapsulated and decapsulated for the primary and secondary tunnel and that the inbound and outbound ESP SAs have an` ACTIVE `status. This indicates that traffic is flowing through the tunnel.
+The <Corporate Public IP> is the IP address on the router from which the IPSec tunnel is established.
+interface: <Primary Tunnel Interface>
+Crypto map tag: Tunnel1-head-0, local addr: <Corporate Public IP>
+protected vrf: (none)
+local ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+remote ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+current_peer: <Primary VPN Hostname>* *port 500*
+*PERMIT, flags={origin_is_acl,}
+#pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+#pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+#pkts compressed: 0, #pkts decompressed: 0
+#pkts not compressed: 0, #pkts compr. failed: 0
+#pkts not decompressed: 0, #pkts decompress failed: 0
+#send errors 0, #recv errors 0
+local crypto endpt.: <Corporate Public IP>, remote crypto endpt.: <Primary VPN Hostname>
+path mtu <MTU>, ip mtu <MTU>, ip mtu idb FastEthernet4
+current outbound spi: 0xBDC1E53(198975059)
+PFS (Y/N): N, DH group: none
+inbound esp sas:
+spi: 0xDF685FC2(3748159426)
+transform: esp-aes128 esp-md5-hmac ,
+in use settings ={Tunnel, }
+conn id: 1, flow_id: Onboard VPN:1, sibling_flags 80000046, crypto map:
+Tunnel1-head-0
+sa timing: remaining key lifetime (k/sec): (4552507/14113)
+IV size: 8 bytes
+replay detection support: Y
+Status: ACTIVE
+inbound ah sas:
+inbound pcp sas:
+outbound esp sas:
+spi: 0xBDC1E53(198975059)
+transform: esp-null esp-md5-hmac ,
+in use settings ={Tunnel, }
+conn id: 2, flow_id: Onboard VPN:2, sibling_flags 80000046, crypto map:
+Tunnel1-head-0
+sa timing: remaining key lifetime (k/sec): (4552507/14113)
+IV size: 8 bytes
+replay detection support: Y
+Status: ACTIVE
+outbound ah sas:
+outbound pcp sas:
+interface: <Backup Tunnel Interface>
+Crypto map tag: Tunnel2-head-0, local addr: <Corporate Public IP>
+protected vrf: (none)
+local ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+remote ident (addr/mask/prot/port): (0.0.0.0/0.0.0.0/0/0)
+current_peer: <Backup VPN Hostname>* *port 500*
+*PERMIT, flags={origin_is_acl,}
+#pkts encaps: 0, #pkts encrypt: 0, #pkts digest: 0
+#pkts decaps: 0, #pkts decrypt: 0, #pkts verify: 0
+#pkts compressed: 0, #pkts decompressed: 0
+#pkts not compressed: 0, #pkts compr. failed: 0
+#pkts not decompressed: 0, #pkts decompress failed: 0
+#send errors 0, #recv errors 0
+local crypto endpt.: <Corporate Public IP>, remote crypto endpt.: <Backup VPN Hostname>
+path mtu <MTU>, ip mtu <MTU>, ip mtu idb FastEthernet4
+current outbound spi: 0xBDC1E53(198975059)
+PFS (Y/N): N, DH group: none
+inbound esp sas:
+inbound ah sas:
+inbound pcp sas:
+outbound esp sas
+outbound ah sas:
+outbound pcp sas:
+[]Use the `show track ``<ID>` command to track the IP SLA status. The IP SLA reachability status indicates the tunnel monitoring results. `Reachability is Down `indicates that the tunnel monitoring failed, while `Reachability is Up `indicates that the tunnel monitoring is successful.
+Track 1
+IP SLA 1 reachability
+Reachability is Down
+3 changes, last change 00:16:23
+Latest operation return code: Timeout
+Track 2
+IP SLA 2 reachability
+Reachability is Up
+2 changes, last change 01:01:27
+Latest operation return code: OK
+Latest RTT (millisecs) 1
+[]Use the `show ip sla statistics` command to view the IP SLA statistics:
+IPSLAs Latest Operation Statistics
+IPSLA operation id: 2
+Number of successes: Unknown
+Number of failures: Unknown
+Operation time to live: 0
+IPSLA operation id: 1
+Latest RTT: NoConnection/Busy/Timeout
+Latest operation start time: *02:29:07.511 UTC Mon Nov 10 2014
+Latest operation return code: Timeout
+Number of successes: 0
+Number of failures: 2
+Operation time to live: Forever
+IPSLA operation id: 2
+Latest RTT: 1 milliseconds
+Latest operation start time: *02:29:10.719 UTC Mon Nov 10 2014
+Latest operation return code: OK
+Number of successes: 2
+Number of failures: 0
+Operation time to live: Forever
+[]Use the `show crypto session` command to simulate a fail condition for the primary tunnel and verify that a failover to the backup tunnel occurs. If the failover is successful, the backup tunnel has an `UP-ACTIVE `session status and the primary tunnel has a `DOWN-NEGOTIATING `session status.
+Crypto session current status
+Interface: <Backup Tunnel Interface>
+Session status: UP-ACTIVE
+Peer: <Backup VPN Hostname> port 500
+IKEv1 SA: local <Corporate Public IP>/500 remote <Backup VPN Hostname>/500 Active
+IPSEC FLOW: permit ip 0.0.0.0/0.0.0.0 0.0.0.0/0.0.0.0
+Active SAs: 2, origin: crypto map
+Interface: <Primary Tunnel Interface>
+Session status: DOWN-NEGOTIATING
+Peer: <Primary VPN Hostname> port 500
+IKEv1 SA: local <Corporate Public IP>/500 remote <Primary VPN Hostname>/500 Inactive
+IPSEC FLOW: permit ip 0.0.0.0/0.0.0.0 0.0.0.0/0.0.0.0
+Active SAs: 0, origin: crypto map

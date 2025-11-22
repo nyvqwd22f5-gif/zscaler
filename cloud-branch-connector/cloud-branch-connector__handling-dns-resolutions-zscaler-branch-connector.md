@@ -1,0 +1,12 @@
+# Handling DNS Resolutions for Zscaler Branch Connector
+Source: https://help.zscaler.com/cloud-branch-connector/handling-dns-resolutions-zscaler-branch-connector
+PDF: https://help.zscaler.com/pdf/com/en/1446986.pdf
+
+The following table provides information on how Zscaler Branch Connector handles DNS resolutions for various traffic forwarding methods:
+[](/cloud-branch-connector/about-ip-pool)[](/zia/about-global-zscaler-enforcement-nodes)
+| Traffic Forwarding Method | DNS Resolution Handling |
+| ------------------------- | ----------------------- |
+| ZPA Traffic Forwarding | The DNS request arrives at any destination IP address for an FQDN request that matches a ZPA application. Branch Connector intercepts requests and responds with a customer-defined synthetic IP address from the customer-defined IP pool. |
+| ZIA Traffic Forwarding | The DNS request arrives at Branch Connector from a workload configured with a custom DNS server destination IP address (e.g., 8.8.8.8). Branch Connector encapsulates the request with a client source IP and destination DNS IP address (e.g., 8.8.8.8) and forwards the request to ZIA. You need to configure the ZIA DNS control and firewall filtering policies to allow the DNS response back to the workload. |
+| Direct Traffic Forwarding | The DNS request arrives at Branch Connector from a workload configured with a custom DNS server destination IP address (e.g., 8.8.8.8). Custom traffic forwarding policy matches the client source IP address, the destination IP address (e.g., 8.8.8.8), or network service (UDP 53) with the forwarding action set to direct. Branch Connector forwards this request to the destination IP address, modifying the source IP from the client to its own service IP address (Source NAT). |
+| Direct Traffic Forwarding with Global VIP | The DNS request arrives at Branch Connector from a workload configured with a custom DNS server destination that matches a Zscaler Global Public Service Edge IP (e.g., 185.46.212.88). Custom traffic forwarding policy matches the client source IP address, the destination IP address, or network service (UDP 53) with the forwarding action set to direct. Branch Connector performs both source and destination NAT on the DNS request. The source IP is replaced with Branch Connector's own service IP address and the destination IP is replaced with the current DNS server configured on the Branch Connector. |

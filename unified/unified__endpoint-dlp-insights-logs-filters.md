@@ -1,0 +1,113 @@
+# Endpoint DLP Insights Logs: Filters
+Source: https://help.zscaler.com/unified/endpoint-dlp-insights-logs-filters
+PDF: https://help.zscaler.com/pdf/com/en/1497401.pdf
+
+Filters define the traffic information that you view in your Endpoint Data Loss Prevention (DLP) Insights Logs. To learn more about logs, see [About Insights Logs](/unified/about-insights-logs).
+Certain filters, like** **User, Department, and others, support the selection of multiple values. You can select up to 200 values in a single filter. You can also choose to include or exclude the selected values. Some filters support additional operators (i.e., Contains, Starts With, Ends With, Exact Match, Does Not Contain, Does Not End With, Does Not Start With, Not Null, or Is Null) for filters that perform string matches.
+Following are the Endpoint DLP Insights Log filters that you can select:
+- **Action Taken**: Use this filter to limit the data to activities associated with a specific action taken. The following actions appear under this filter:
+- Allow
+- Block
+- Confirm Allow
+- Confirm Block
+- Exempted
+- **Activity Type**: Use this filter to limit the data to activities associated with a specific activity type. The following activity types appear under this filter:
+- Download
+- Email Sent
+- File Copy
+- File Read
+- File Write
+- Print
+- Upload
+- **Channel**: Use this filter to limit the data to activities associated with a specific channel. The following channels appear under this filter:
+- Network Share
+- Personal Cloud Storage
+- Printing
+- Removable Storage
+- **Confirm Action**: Use this filter to limit the data to activities associated with a specific action by the user in the confirmation dialog box. The following confirmed actions appear under this filter:
+- Cancel
+- Confirm
+- Timeout (activities that were timed out before user confirmation)
+- **Confirm Justification**: Use this filter to limit the data to activities associated with a specific justification provided by the user for the activity. The following actions appear under this filter:
+- Other
+- The data contains only my personal information.
+- The data does not contain sensitive information.
+- This activity is part of a necessary business workflow.
+- This activity was accidental.
+- User didn't provide justification in time.
+- **Data Center**: Use this filter to limit the data to activities associated with a specific data center.
+- **Department**: Use this filter to limit the data to the activities of a specific [department](/unified/about-departments). Use the Search function to find a specific department.
+- **Destination Name**: Use this filter to enter all or part of the item's destination name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **Destination Type**: Use this filter to limit the data to traffic associated with a specific destination type. The following destination types appear under this filter:
+- Application
+- Local Drive
+- Network Share
+- Personal Cloud Storage
+- Printer
+- Removable Storage Device
+- Web
+- **DLP Dictionaries**: Use this filter to see which activities contain a particular dictionary as a trigger. If a dictionary was triggered, the name of the dictionary is displayed along with a match count indicating the search score or match count for this dictionary. The default option for this filter is **All**. You can search for specific DLP dictionaries.
+- **DLP Engine**: Use this filter to view activities in which data leakage was detected. The default option for this filter is **Any**. You can search for specific DLP engines.
+- **DLP Identifier**: Use this filter to search for the activities using this DLP identifier. Whenever a DLP rule is hit, and the appropriate alert is configured, an email containing this ID is sent to your auditors. Use it as a filter to locate the exact activity. You can search for specific DLP identifiers.
+- **Document Type**: Use this filter to limit the data to traffic associated with a specific uploaded or downloaded document type. The following document types appear under this filter:
+- Corporate Finance
+- Corporate Legal
+- Court Form
+- Immigration
+- Insurance
+- Invoice
+- Legal
+- Medical Information
+- Real Estate
+- Resume
+- Tax
+- Technical
+- Transportation and Motor Department
+- Unknown
+- **File Destination Location**: Use this filter to enter all or part of the file destination location in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **File MD5**: Use this filter to enter the 32-character file MD5 in the text field.
+- **File SHA256**: Use this filter to display the hash of identical files. Enter all or part of the SHA256 in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **File Size**: Use this filter to limit the data to activities associated with a specific file size. When you select this filter, enter the **From **and **To **field values in bytes to view the logs within that range.
+- **File Source Location**: Use this filter to enter all or part of the file source location in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **Item Name**: Use this filter to enter all or part of the item's name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **Item Type**: Use this filter to limit the data to traffic associated with a specific item type. The following item types appear under this filter:
+- Clipboard Text
+- Email
+- Email Attachment
+- Embedded File
+- File
+- HTTP Request
+- Printed Text
+- **Other Rules**: Use this filter to limit the data to activities associated with other rules.
+- **Record Type**: Use this filter to limit the data to activities associated with a specific record type. The following record types appear under this filter:
+- DLP Incident
+- Sensitive Activity
+- **Rule Name**: Use this filter to limit the data to activities associated with specific rules in the Endpoint DLP policy. Choose the rules from the list.
+- **Scan Time**: Use this filter to limit the data to activities associated within a specific range of time. The following scan time appears under this filter:
+- All
+- 0–10 Sec
+- 10 Sec–30 Sec
+- 30 Sec–1 Min
+- 1 Min–5 Min
+- 5 Min–10 Min
+- 10Min–30 Min
+- 30 Min–1 Hour
+- Above 1 Hour
+- Custom
+- **Severity**: Use this filter to limit the data to activities associated with a specific rule severity. The following severities appear under this filter:
+- High
+- Information
+- Low
+- Medium
+- **Source Name**: Use this filter to enter all or part of the item's spruce name in the text field, and choose **Contains**, **Starts With**, **Ends With**, **Exact Match**, **Does Not Contain**, **Does Not End With**, **Does Not Start With**,** Not Null**, or **Is Null**.
+- **Source Type**: Use this filter to limit the data to activities associated with a specific source type. The following source types appear under this filter:
+- Application
+- Local Drive
+- Network Share
+- Personal Cloud Storage
+- Removable Storage Device
+- Web
+- **User**: Use this filter to view the activities of a specific user. The default option for this filter is **Any**. You can search or choose users from the list.
+- **ZDP Mode**: Use this filter to view the activities for a specific Endpoint DLP mode. The following ZDP modes appear under this filter:
+- Block Mode
+- Exemption Mode

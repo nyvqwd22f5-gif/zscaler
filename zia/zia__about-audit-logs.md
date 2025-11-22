@@ -1,0 +1,245 @@
+# About Audit Logs
+Source: https://help.zscaler.com/zia/about-audit-logs
+PDF: https://help.zscaler.com/pdf/com/en/1399126.pdf
+
+[Watch a video about Audit Logs](https://fast.wistia.net/embed/iframe/5a5n89evki)
+Zscaler records the actions of every admin in the ZIA Admin Portal and the actions that occur through the Cloud Service APIs.
+Audit logs provide the following benefits and enable you to:
+- View alterations made to the ZIA Admin Portal, such as PAC file modifications or URL filtering policy alterations.
+- View details on all the changes made by an administrator during a login session.
+- Use them frequently to demonstrate compliance with security policies.
+- Detect and investigate suspicious activity and track unauthorized access to the administrative user interface.
+If an admin account makes 5 unsuccessful attempts to log in within 1 minute, the account is locked out for 5 minutes and the failed attempts are recorded in the audit log. The audit logs are stored for up to 6 months.
+About the Audit Logs Page
+On the Audit Logs page (Administration > Audit Logs), you can do the following:
+- Filter by time range, action, category, sub-category, interface, and/or result.
+- Search for an audit log by resource, admin ID, client IP, trace ID, or configuration changes. The search only shows results starting with or completely matching the search string.
+- Download a CSV file. The times in the CSV file are in PDT.
+- View a list of actions that have occurred. For each action, you can see:
+- **Timestamp**: The date and local time the action occurred.
+- **Action**:** **The action performed by the admin in the ZIA Admin Portal or the action performed by an API.
+- [List of all potential actions](#action)
+- **Category**: A location in the ZIA Admin Portal where the action was performed by a user or an API.
+- [List of all potential categories](#category)
+- **Sub-Category**: The subject under the selected category.
+- [List of all potential sub-categories](#sub)
+- **Resource**: The specific subject within a sub-category. For example, if an admin adds a new admin, then the resource is the name of the admin that was added.
+- **Admin ID**: The admin's login ID or the internal API user (`oauth-<rolename>$@<orgid>.<cloud-domain>`) if an APIs action was authenticated by an external OAuth 2.0 authentication server.
+- **Client IP**: The source IP address for the admin or the client application's IP address that executed the API.
+- **Interface**: The means by which the action was performed.
+- The interface values are: **Admin UI**, or **API**.
+- **Trace ID**: The trace ID is generated and logged for transactions associated with ZIA API requests made via [Zscaler OneAPI](/oneapi/understanding-oneapi). The trace ID helps admins correlate API transactions with the OneAPI platform and you can use the trace ID for debugging purposes.
+- **Result**: The outcome of an action.
+- If the action was a success, a green circle with a checkmark inside is displayed.
+- If the action was a failure, a red circle with an X inside is displayed.
+- [Modify the table and its columns.](/zia/how-do-i-use-tables-admin-portal)
+- [See configuration changes.](#config)
+![Audit Logs](/downloads/zia/authentication-administration/administrator-role-management/about-audit-logs/ZIA-About-Audit-Logs.png)
+- []Activate
+- Alert
+- Audit Operation
+- Auto IR
+- Change Deployed PAC Version
+- Contain Device
+- Create
+- Create New PAC Version
+- Delete
+- Delete PAC
+- Delete PAC Version
+- Download
+- Forced Activate
+- Import
+- Isolate
+- Kill Current Execution
+- Patch
+- Quarantine
+- Remediate
+- Sign In
+- Sign Out
+- Stage PAC Version
+- Update
+- []All
+- Access Control Resource
+- Activation
+- Administrator Management
+- Advanced Settings
+- Alert
+- Audit Logs
+- Authentication Settings
+- Backup & Restore
+- Cloud Application Status
+- Cloud Service API Key
+- Company Profile
+- Data Loss Prevention Resource
+- DC Exclusion
+- DLP Incident Receiver
+- Firewall Access Control
+- Firewall Resource
+- Forwarding Method
+- Help
+- Identity Proxy Settings
+- IPv6 Configuration
+- Login
+- Mobile Access Control
+- Mobile Security
+- NSS
+- Organization Info
+- Partner Integration
+- Report
+- Role Management
+- Rule Label Management
+- SaaS Assets Report
+- SaaS Security API
+- Traffic Forwarding Resource
+- User Management
+- Virtual Service Edge (formerly Virtual ZEN or VZEN)
+- Virtual ZEN
+- Web Access Control
+- Web Data Loss Prevention
+- Web Security
+- []Account Info
+- Activation
+- Active Directory Settings
+- Admin UI Restricted Access
+- Administrator
+- Advanced Policy Settings
+- Advanced Settings
+- Advanced Threats Policy
+- Alert Definitions
+- Alert Rule Configuration
+- Alert Subscriptions
+- Audit Logs
+- Auditor
+- Authentication Bridge
+- Authentication Profile
+- Authentication Setup Wizard
+- Backup & Restore
+- Bandwidth Class
+- Bandwidth Control
+- Browser Control
+- Cloud App Control Policy
+- Cloud Application Instance
+- Cloud Service API Key
+- Company Logo
+- Company Profile
+- Custom IPS Signature Rule
+- Custom Threat Category
+- Department
+- Destination Group
+- DLP
+- DLP Dictionary
+- DLP Engine
+- DLP Global Options
+- DLP Notification Template
+- DNS
+- DNS Application Group
+- EDM Templates
+- EDM Templates cell reserve
+- End User Notifications
+- EUSA Info
+- Exempted URLs
+- EzAgent
+- File Type Control
+- Firewall Filtering
+- Firewall Forwarding
+- Firewall Network
+- FTP
+- Gateways
+- GRE Tunnel
+- Group
+- ICAP Receiver
+- Identity Providers
+- Identity Proxy Settings
+- IDM Profiles
+- IDM Profiles Storage
+- Incident Receiver
+- Incident Receiver VM
+- Index Tool
+- Interactive Reports
+- IPS
+- IPv6 Configuration
+- LDAP Settings
+- Location
+- Location Group
+- Login
+- Malware Policy
+- Malware Policy Security Exceptions
+- Malware Security Exception
+- Mobile App Store Control
+- Mobile Malware Protection
+- NAT Control
+- NAT64 and DNS64 Prefix
+- Network Application Group
+- Network Service
+- Network Service Group
+- NSS Feed
+- NSS Server
+- OAuth 2.0 Authorization Servers
+- PAC File
+- Partner Activity
+- Partner Integration
+- Partner Integration Setup
+- Password change
+- Password expiry
+- Proxy
+- QBR
+- Remote Assistance
+- Report Definition
+- Report Favorites
+- Risk Profile
+- Role Management
+- Rule Label
+- SaaS Assets Report
+- SaaS Security API Activity Alert Policy
+- SaaS Security API Collaboration DLP Policy
+- SaaS Security API Collaboration Malware Policy
+- SaaS Security API CRM DLP Policy
+- SaaS Security API CRM Malware Policy
+- SaaS Security API Email DLP Policy
+- SaaS Security API Email Malware Detection
+- SaaS Security API File Sharing Malware Detection
+- SaaS Security API ITSM DLP Policy
+- SaaS Security API ITSM Malware Policy
+- SaaS Security API Repository DLP Policy
+- SaaS Security API Repository Malware Policy
+- SaaS Security API Scan Configuration
+- SaaS Security API Scanning Exceptions
+- SaaS Security API Storage DLP Policy
+- SaaS Security API Storage Malware Policy
+- SaaS Security File Sharing API DLP Policy
+- SaaS Security Posture Policy
+- SAML
+- SAML Settings
+- Sandbox
+- Sandbox Advanced Security Settings
+- Scheduled Report
+- Shadow IT Report
+- Source IP Group
+- SSL Certificates
+- SSL Inspection
+- Static IP
+- Subclouds
+- Tenant
+- Tenant Restriction Profile
+- Time Interval
+- Traffic Forwarding Method
+- URL Category
+- URL FIltering
+- User
+- Virtual Service Edge (formerly Virtual ZEN or VZEN)
+- Virtual ZEN
+- Virtual ZEN Cluster
+- VPN Credentials
+- Webhook
+- ZAdmin Login
+- ZAdmin SSO Login
+- Zscaler Client Connector Devices
+[]Click on the configuration changes you want to view. You'll be able to view visual differences between the pre-configuration and post-configuration changes.
+There are two types of changes you can view:
+![""](/downloads/zia/authentication-administration/administrator-role-management/about-audit-logs/ZIA-Audit-Logs-configuration-changes.png)
+- View additions or deletions. The following is an example of an addition:
+[See image.](#addition)
+- View updates. The following is an example of modifications to a policy:
+[See image.](#update)
+[]![""](/downloads/zia/authentication-administration/administrator-role-management/about-audit-logs/ZIA-Audit-Logs-configuration-changes-add.png)
+[]![""](/downloads/zia/authentication-administration/administrator-role-management/about-audit-logs/ZIA-Audit-Logs-configuration-changes-update.png)

@@ -1,0 +1,7 @@
+# Understanding Zscaler Authoritative DNS Servers
+Source: https://help.zscaler.com/unified/understanding-zscaler-authoritative-dns-servers
+PDF: https://help.zscaler.com/pdf/com/en/1495226.pdf
+
+[]Zscaler authoritative DNS servers support EDNS0 client subnet options of EDNS0 protocol. To learn more, refer to [RFC 7871: Client Subnet in DNS Queries](https://tools.ietf.org/html/rfc7871) and [RFC 2671: Extension Mechanisms for DNS (EDNS0)](https://tools.ietf.org/html/rfc2671). These authoritative DNS servers can now accurately identify the origin of the DNS requests by looking into the client subnet options and return more accurate DNS responses based on the user's location.
+Suppose a client from a remote location in South Africa requests DNS resolution for gateway.zscalertwo.net using the Google public DNS (8.8.8.8). The request is routed to the nearest Google data center in Switzerland. The DNS recursive resolver in Switzerland then contacts the Zscalertwo authoritative name servers located in Washington D.C. If the client request includes the client subnet options, then the authoritative DNS server in Washington D.C. identifies the origin of the client. It then returns the VIP of the data center in São Paulo which is the closest one to the client in South Africa.
+This feature helps significantly reduce the latency between the users and Zscaler PoP by routing the users to the nearest PoP. It widely benefits the end-users who use public DNS servers such as OpenDNS, Google, Infoblox, and so on.

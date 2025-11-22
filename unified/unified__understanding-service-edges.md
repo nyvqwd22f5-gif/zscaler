@@ -1,0 +1,15 @@
+# Understanding Service Edges
+Source: https://help.zscaler.com/unified/understanding-service-edges
+PDF: https://help.zscaler.com/pdf/com/en/1496516.pdf
+
+A key component of the Zscaler cloud, Service Edges are full-featured secure internet gateways that provide integrated internet security.
+Service Edges can be public or private. Private Applications Public Service Edges, addressed here, are deployed in Zscaler data centers around the world and can handle hundreds of thousands of concurrent users with millions of concurrent sessions. So, regardless of where your users are physically located, they can access their internal applications from any device. Private Applications Public Service Edges enforce access and reauthentication policies based on your organization's corporate best practices. For any given Microtunnel (M-Tunnel), the Control Service Edge is the Private Applications Public Service Edge that handles cloud-level system messages to establish the M-Tunnel. Private Applications Private Service Edges are fully functional single-tenant brokers that reside within your site or other locations, like cloud services. To learn more, see [About Private Service Edges](/unified/about-private-service-edges-private-applications).
+Both Internet & SaaS and Private Applications have Service Edges. The fundamental difference between a Service Edge used for Internet & SaaS and one used for Private Appplications is that:
+- In Internet & SaaS, the Service Edge inspects the data as traffic flows through it.
+- In Private Applications, the Service Edge does not inspect the data as traffic flows through it.
+All Service Edges have significant fault tolerance capabilities. They are deployed in active-active mode to ensure availability and redundancy, and Zscaler monitors and maintains its Service Edges to ensure continuous availability.
+User traffic is not passed to any other component within the Zscaler infrastructure, and Service Edges never store any data to disk. Packet data is held in memory for inspection, and is either forwarded or dropped based on policy. Log data generated for every transaction is compressed, tokenized, and exported over secure TLS connections to log routers.
+For Private Applications Public Service Edges, the log routers direct the information to the Log Streaming Service (LSS), hosted in the appropriate geographical region for each organization.
+[]Public Service Edges and the Central Authority
+The Central Authority (CA) can be thought of as the "brain and nervous system" of the cloud. It monitors the cloud and provides a central location for software and database updates, as well as policy and configuration settings.
+The Admin Portal is the central point of control for the entire system. This interface enables organizations to configure system elements, including applications, servers, and policies, and provides analytics dashboards for visibility into the system as a whole. The Admin Portal is served over HTTPS using public key cryptography from a content delivery network (CDN). To learn more, see [About the Admin Portal](/unified/getting-started-zscaler/admin-portal-access-navigation).

@@ -1,0 +1,143 @@
+# About the Activities Report
+Source: https://help.zscaler.com/unified/about-activities-report
+PDF: https://help.zscaler.com/pdf/com/en/1497541.pdf
+
+The Activities page within the SaaS Security page shows the data for all the activities performed in various SaaS applications. This data helps in tracking specific activities and view the users who performed the activities for further analysis and action.
+The Activities page provides the following benefits and enables you to:
+- View an audit trail of all the activities end users and admins perform in SaaS applications. Activities include uploading, downloading, sharing documents, downloading a report, etc.
+- View granular activities for both the user and administrator, filtered by activity types, SaaS tenants, etc.
+About the Activities Page
+On the Activities page (Analytics > Internet & SaaS > Analytics > SaaS Security Report > Activities), you can do the following:
+- Download a CSV file of the report.
+- Filter SaaS Activities using the following filters and click **Apply** to update the page with your selections. You can click **Reset** at any time:
+- **Tenant**: Filter by the name of the SaaS application tenant.
+- **Activity**: Filter by the type of activities the end users perform:
+- [Activities](#activities)
+- **Time Frame**: Filter activities by the last 24 hours, the last 7 days, the last 30 days, the last 90 days, or choose a custom time frame.
+- **Object 1 Type** and **Object 2 Type**: Filter activities by the type of object. If applicable, the activity can have a second object listed. The following object types are available:
+- [Object Types](#object-type)
+- **User**: Filter activities by user.
+- **Activity Role Type**: Filter by the user's role. The following role types are available:
+- [Role Types](#roles-type)
+- **Raw Activities Table**: View a list of all the SaaS activities. For each activity, you can view the following information:
+- **User**: The name of the user doing the activity.
+- **Event Time**: The time the activity was done.
+- **Source Location**: The city and country in which the activity was done.
+- **Source IP**: The IP address used.
+- **Tenant**: The tenant involved in the activity.
+- **Activity**: The type of activity that was done.
+- **Object 1 Type**: The type of object involved in the activity.
+- **Object 1 Name**: The name of the object (e.g., if the object is a file, then this is the name of the file).
+- **Object 2 Type**: The second type of object, if applicable, involved in the activity.
+- **Object 2 Name**: The name of the second object.
+![SaaS Security Activities Report](/downloads/zia/dashboard-analytics/reports/saas-security-activities-report/Activities_report.png)
+- []Accept
+- Add
+- Approve
+- Assigned To User
+- BD HW is not Registered
+- Blocked
+- Change
+- Collaboration Accepted
+- Collaboration Change
+- Collaboration Revoked
+- Create
+- Delete
+- Deny Access
+- Detected
+- Disable
+- DLP Sensitive Email Sent
+- Download
+- Download Sync
+- Drop
+- Edit
+- Enable
+- Email With Malware Received
+- Fork
+- Join
+- Login Fail
+- Login Pass
+- Logout Compromised
+- Move
+- Other
+- Pull Request
+- Reactivate
+- Reject
+- Release
+- Remove
+- Reset
+- Resource Granted
+- Restore
+- Restrict
+- Revoke
+- Risky Download
+- Risky Share
+- Risky Upload
+- Share
+- Suspend
+- Transfer
+- Unassign
+- Unsuspend
+- Unverify
+- Update
+- Upload
+- Upload Sync
+- User/App Deactivate
+- Verify
+Sync activities apply to only File Sharing applications such as OneDrive and SharePoint.
+- []Application
+- App Session
+- Auth
+- Barrier
+- Storage Bucket
+- Channel
+- Config
+- Default Channel
+- Directory
+- DLP Rule
+- DLP Violation
+- Domain
+- Email
+- Enterprise
+- Entity
+- Exclusion
+- File
+- Folder
+- Group
+- Guest
+- Invite Route
+- ITSM Object
+- Key
+- Label Name
+- Link
+- Mail
+- Mailbox Permission
+- None
+- Organization
+- Owner
+- Permission
+- Policy
+- Product
+- Project
+- Public URL
+- Report
+- Repository
+- Request
+- Risk Reason
+- Role
+- Once per Session
+- Setting
+- Shared Drive
+- Shared Channel
+- Shared Channel Invite
+- Site
+- Space
+- Team
+- Threat
+- User
+- User Session
+- Value
+- Workspace
+- []Administrator
+- User
+- All

@@ -623,6 +623,7 @@ Source: https://help.zscaler.com/zpa
     - [Using WebView2 Authentication](/zscaler-client-connector/using-webview2-authentication)
     - [Enabling Resizing of the Zscaler Client Connector Authentication Window](/zscaler-client-connector/enabling-resizing-zscaler-client-connector-authentication-window)
     - [Enabling ZDX Module Upgrades via the CLI](/zscaler-client-connector/enabling-zdx-module-upgrades-cli)
+    - [Enabling IPv6 Resolution for Zscaler Domains](/zscaler-client-connector/enabling-ipv6-resolution-zscaler-domains)
     - [About Zscaler Client Connector IdP](/zscaler-client-connector/about-zscaler-app-idp)
     - [Using Zscaler Client Connector Portal as an Identity Provider](/zscaler-client-connector/using-zscaler-client-connector-portal-identity-provider)
     - [Creating a Device Token](/zscaler-client-connector/creating-device-token)
